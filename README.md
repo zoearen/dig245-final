@@ -16,9 +16,8 @@ We'll produce our projects using the following timeline (specific dates are on t
 
 Identify a topic, collect research, prepare a summary for a brainstorming session.
 
-
 1. Identify a potential topic area you would like to explore. It shouldn't be too specific, nor too broad.
-1. Collect related research (articles, etc.) and inspiration (links to similar projects).
+1. Collect related research (articles, etc.) and inspiration (list three similar projects with links).
 1. Identify a new skill or technology (a design method, programming pattern, or code library) you are interested to learn and could potentially use in your project.
 1. Write a 3–4 sentence summary of your topic, research, and technology. Address why you are drawn to this topic and why it is important we engage with it.
 
@@ -87,6 +86,8 @@ Design iterations of all your pages.
 
 <pre>
 In class: Share your iterations to get feedback before coding the final design.
+
+- What are three questions you would like to ask each user?
 </pre>
 
 
@@ -100,9 +101,9 @@ Your finished project should include:
 
 1. Your coded design (valid [HTML](https://validator.w3.org/) and [CSS](https://jigsaw.w3.org/css-validator/)) combined with your prototype in a final application
 1. The project should be live, hosted on Github Pages, Heroku, or your own server.
-1. A well-designed, but simple, introduction page to give your project context
+1. A well-designed, but simple page (preferably that is part of the project) to give your project context. This could be an introduction to the project or provided at the end to explain what happened.
 1. A 200–300 word statement explaining your concept and execution.
-1. An updated pitch with screenshots, videos, etc. to document and share your finished project.
+1. An updated pitch (with screenshots and/or video) to document and share your finished project.
 
 <pre>
 In class: We will share final projects in <a href="https://en.wikipedia.org/wiki/Lightning_talk">lightning talks</a> (5 min.)
@@ -116,7 +117,9 @@ In class: We will share final projects in <a href="https://en.wikipedia.org/wiki
 
 
 
+
+
  ## Notes
 
 - Course resources, documentation etc. can be found on the course [repo](https://github.com/omundy/critical-web-design/blob/master/README.md)
-- Refer to this [rubric](https://docs.google.com/document/d/1daQKCtPQCRhu2RhqHZbqBKVeJP7OcyCypLadfn14zBA/edit) for grading.
+- Refer to this [rubric](https://docs.google.com/document/d/1gqAB_AHkMC6uKr_1uP9JzPwWclABw1RAB7KwEgAQSds/edit) for grading.
