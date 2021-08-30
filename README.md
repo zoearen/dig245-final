@@ -14,6 +14,20 @@ We'll produce our projects using this [project development template](https://git
 
 
 
+<!-- <details>
+<summary>Learning Objectives</summary>
+
+Students who complete the following will be able to:
+
+- Recall themes from materials in the course and respond with a concept for a web application
+- Describe
+- Compare
+- List
+- Use HTML, CSS, JS to create a Javascript web application from scratch
+
+</details>
+ -->
+
 
 
 ## Instructions
