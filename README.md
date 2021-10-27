@@ -59,9 +59,7 @@ Fork this repository and clone it to your `critical-web-design` folder on your m
 
 <!--
 
-
 [project development template](https://github.com/omundy/project-development-template)
-
 
 -->
 
@@ -81,11 +79,17 @@ Identify a topic, collect research, prepare a summary for a brainstorming sessio
 <details>
 <summary>In-class activity</summary>
 
-In groups, brainstorm on your topic(s) using the <a href="https://omundy.github.io/project-development-template/materials/brainstorming-disney-method/index.html" target="_blank">Disney Creative Strategy</a>. How might you create something that helps others discuss, think about, or help to solve the issue.
+In groups, brainstorm on your topic(s) use the <a href="https://omundy.github.io/project-development-template/materials/brainstorming-disney-method/index.html" target="_blank">Disney Creative Strategy</a>, which asks your group to assume different "hats" in order to ideate on concepts, solutions, and risks.
 
-- The more ideas the better. Brainstorming aims to produce quantity, from which we select quality ideas.
-- No criticism. Our goal is to generate a pool of ideas. All ideas are welcome.
-- Follow the plan, which asks your group to assume different "hats" in order to ideate on concepts, solutions, and risks.
+1. Everyone: post your subject or concept in Slack
+1. As Dreamers, add new ideas for projects based on the subject to the posts in your group
+    - How might you create something that helps others discuss, think about, or help to solve the issue?
+    - The more ideas the better. Brainstorming aims to produce quantity, from which we select quality ideas.
+    - No criticism. Our goal is to generate a pool of ideas. All ideas are welcome.
+1. As Realists, after all have posted, talk about each in a group
+    - Think more practically, about how you would put the ideas into practice.
+1. After the session, explore the ideas and notes as a critic, to figure out what you can build in the given time
+
 
 </details>
 
