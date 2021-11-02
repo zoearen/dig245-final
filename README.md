@@ -179,11 +179,14 @@ Share your iterations to get feedback before coding the final design.
 
 Your finished project should include:
 
-1. Your coded design (valid [HTML](https://validator.w3.org/) and [CSS](https://jigsaw.w3.org/css-validator/)) combined with your prototype in a final application
-1. The project should be live, hosted on Github Pages, Heroku, or your own server.
-1. A well-designed, but simple page (preferably that is part of the project) to give your project context. This could be an introduction to the project or provided at the end to explain what happened.
-1. A 200–300 word statement explaining your concept and execution.
-1. An updated pitch (with screenshots and/or video) to document and share your finished project.
+1. The Project:
+    1. Intro page: A well-designed, but simple page that contextualizes your project. It could appear as an introduction to the project or provided at the end to explain what happened.
+    1. Your coded design (valid [HTML](https://validator.w3.org/) and [CSS](https://jigsaw.w3.org/css-validator/)) combined with your prototype in a final application.
+    1. The project should be live, hosted on Github Pages, Heroku, or your own server.
+1. Documentation:
+    1. An updated pitch (with screenshots and/or video) to document and share your finished project.
+    1. A 200–300 word statement explaining your concept and execution. This can be posted in Moodle, or included somehow in the actual project (e.g. the Intro page).
+
 
 <details>
 <summary>In-class activity</summary>
@@ -210,7 +213,13 @@ We will share final projects in <a href="https://en.wikipedia.org/wiki/Lightning
 <details>
 <summary>Grading</summary>
 
-Refer to this [rubric](https://docs.google.com/document/d/1gqAB_AHkMC6uKr_1uP9JzPwWclABw1RAB7KwEgAQSds/edit)
+
+The final grade incorporates preparation scores with the final score ([rubric](https://docs.google.com/document/d/1gqAB_AHkMC6uKr_1uP9JzPwWclABw1RAB7KwEgAQSds/edit)).
+
+```js
+let preparation = (pitch * prototype * design) / 3;
+let finalGrade = (preparation * (finishedProject + documentation)) / 2;
+```
 
 </details>
 
