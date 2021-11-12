@@ -70,7 +70,7 @@ Fork this repository and clone it to your `critical-web-design` folder on your m
 
 Identify a topic, collect research, prepare a summary for a brainstorming session.
 
-1. **Identify potential topics** area to explore. It shouldn't be too specific, nor too broad. Is there a specific problem you want to solve? Or do you wish to address issues by [problemitizing](https://en.wikipedia.org/wiki/Problematization) your subject?
+1. **Identify potential topics** to explore. It shouldn't be too specific, nor too broad. Is there a specific problem you want to solve? Or do you wish to address issues by [problematizing](https://en.wikipedia.org/wiki/Problematization) your subject?
 1. **Collect research** (related articles, etc.) **and inspiration** (2-3 links or summaries of similar projects).
 1. **Identify new skills or technologies** (e.g. a design method, programming pattern, code library, etc.) you are interested to learn and could potentially use in your project.
 1. **Write a summary** of your topic(s), research, and technology (3–4 sentences). Address why you are drawn to this topic and why it is important to explore. Identify the communities, resources, and issues involved. What frameworks or methodologies might you use?
