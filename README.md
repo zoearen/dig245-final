@@ -71,7 +71,8 @@ Fork this repository and clone it to your `critical-web-design` folder on your m
 Identify a topic, collect research, prepare a summary for a brainstorming session.
 
 1. **Identify potential topics** to explore. It shouldn't be too specific, nor too broad. Is there a specific problem you want to solve? Or do you wish to address issues by [problematizing](https://en.wikipedia.org/wiki/Problematization) your subject?
-1. **Collect research** (related articles, etc.) **and inspiration** (2-3 links or summaries of similar projects).
+1. **Collect research** (related articles, etc.) **and inspiration** (2-3 links or summaries of similar projects). Look at the [Critical Web Design / Radical Software Example Works](https://docs.google.com/spreadsheets/d/1mQ0doWT6tGXm2W-hB5zuz3I8mijGhLSkAe_XrcfMdok/edit#gid=0) for ideas.
+
 1. **Identify new skills or technologies** (e.g. a design method, programming pattern, code library, etc.) you are interested to learn and could potentially use in your project.
 1. **Write a summary** of your topic(s), research, and technology (3–4 sentences). Address why you are drawn to this topic and why it is important to explore. Identify the communities, resources, and issues involved. What frameworks or methodologies might you use?
 1. Bring the above to class for the...
@@ -156,7 +157,7 @@ In groups, share your prototypes to get feedback:
 Design iterations of main views.
 
 1. The design should reflect the overall concept and goals of your project.
-1. Use the Bootstrap `designs/1.psd` template included in this repo or create your design iterations with [Figma](https://figma.com).
+1. Create your design iterations with [Figma](https://figma.com), or use the Bootstrap template included in this repo `designs/1.psd`.
 1. Create multiple iterations of each different page / view your app.
 1. As per class [presentations](https://docs.google.com/presentation/d/1BiIHVEQjmIb2k2vB6N3x1g_S3KSLyZq2YCniq1ONjg8/edit?usp=sharing), look at relevant examples of good design to help you improve your own, then experiment and iterate!
 
@@ -168,6 +169,7 @@ Design iterations of main views.
 Share your iterations to get feedback before coding the final design.
 
 - Bring to class: What are three questions you would like to ask each user of your potential design?
+- In-class: [Design Critique: Imaginary Audience](https://docs.google.com/presentation/d/1BiIHVEQjmIb2k2vB6N3x1g_S3KSLyZq2YCniq1ONjg8/edit#slide=id.gf16dac508b_0_0)
 
 </details>
 
