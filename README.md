@@ -219,9 +219,8 @@ We will share final projects in <a href="https://en.wikipedia.org/wiki/Lightning
 The final grade incorporates preparation scores with the final score ([rubric](https://docs.google.com/document/d/1gqAB_AHkMC6uKr_1uP9JzPwWclABw1RAB7KwEgAQSds/edit)).
 
 ```js
-let preparation = (pitch * prototype * design) * 0.1; // weight = 10%
-let finishedProject = (finishedProject + documentation) * 0.7 // weight = 70%
-let finalGrade = preparation + finishedProject;
+let milestones = ((concept + proposal + prototype + design) / 4) * 0.2;
+let grade = milestones + (deliverables * 0.8);
 ```
 
 </details>
