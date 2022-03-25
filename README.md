@@ -106,7 +106,7 @@ Create a pitch deck (10-15 slide Google Presentation) to share and plan your pro
 
 1. A one paragraph introduction to your concept and what you plan to make. Who will use this and why?
 1. An initial attempt at an [identity](https://docs.google.com/presentation/d/1exnY8fjVsOc3bKZFESJIM2s4JKxhqg_oASPDPokSfrE/edit?usp=sharing) (e.g. a logo, word mark, style guide, etc.).
-1. Examples (2–3) of similar works (in concept or tech) with images and links.
+1. Competition Scan - Examples (2–3) of similar works (in concept or tech) with images and links.
 1. Flowcharts (2–3) showing each step users see, and another [showing how data works](https://www.google.com/search?q=a+flowchart+that+tracks+data+through+the+app&safe=off&tbm=isch) in the app
 1. [Wireframes](https://www.dreamhost.com/blog/how-to-wireframe-website/) showing all the views in the interface (introduction page, forms, results page)
 1. Technology - Include [pseudocode](https://en.wikipedia.org/wiki/Pseudocode) of the main logic of your project. List technologies and demos you think you will need. List the "unknowns"—parts of your idea that you don't know yet how to execute.
@@ -186,9 +186,18 @@ Your finished project should include:
     1. Your coded design (valid [HTML](https://validator.w3.org/) and [CSS](https://jigsaw.w3.org/css-validator/)) combined with your prototype in a final application.
     1. The project should be live, hosted on Github Pages, Heroku, or your own server.
 1. Documentation:
-    1. An updated pitch (with screenshots and/or video) to document and share your finished project.
+    1. A presentation (update your original proposal with screenshots, text, flowcharts, etc.) to document and share your finished project.
+    1. A video (1:30 max) in case your site breaks 😳
     1. A 200–300 word statement explaining your concept and execution. This can be posted in Moodle, or included somehow in the actual project (e.g. the Intro page).
+    1. See more about [documentation](https://omundy.github.io/learn-computing/slides/documentation.html)
 
+
+<!--
+Examples:
+
+[Probability football](https://docs.google.com/presentation/d/1QO5ZFlc8GQilGughUaI57RlhQKc8TWECiqR7wkwjTwQ/edit#slide=id.p)
+
+-->
 
 <details>
 <summary>In-class activity</summary>
