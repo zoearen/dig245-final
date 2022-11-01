@@ -49,9 +49,9 @@ let grade = milestones + (deliverables * 0.8);
 ## About
 
 
-We’ve looked at a number of interconnected issues around design and the internet this semester. Some are specific forms we can identify, like how dark patterns manipulate our experiences by affecting usability and user expectations. Others, like how the surveillance economy affects social justice are harder to visualize, but equally important when we consider whether the internet is or is not a positive force in society.
+We’ve examined several issues around design and the internet this semester. Some forms are easy to identify, like how dark patterns manipulate user experiences by affecting usability and user expectations. Others, like the relationship between the surveillance economy and social justice are harder to visualize, but equally important when we consider whether the internet is or is not a positive force in society.
 
-At the beginning of the semester, the [View Source](https://github.com/omundy/dig245-view-source) assignment asked you to think about why it is important to be able to know how a web page works “under the hood.” This final assignment challenges you to further investigate one or more of your preferred themes from the course and make a creative response in the form of a web application that likewise makes the topic more understandable, relevant, or transparent.
+At the beginning of the semester, the [View Source](https://github.com/omundy/dig245-view-source) assignment asked you to think about why it is important to be able to know how a web page works “under the hood.” This final assignment challenges you to further investigate one or more of your preferred themes (from or related to the course) and conceive of and build a creative response in the form of a web application that likewise makes the topic more understandable, relevant, or transparent.
 
 Your application will consist of HTML, CSS, Javascript, and any additional libraries you may need, but it should address the topic through an interactive experience that involves a user somehow inputting data, and your app transforming that data to reveal insights into your chosen topic.
 
@@ -85,13 +85,12 @@ Fork this repository and clone it to your `critical-web-design` folder on your m
 
 ## 1 - Concept
 
-Identify a topic, collect research, prepare a summary for a brainstorming session.
+*Identify a topic, collect research, prepare a summary for a brainstorming session.*
 
 1. **Identify potential topics** to explore. It shouldn't be too specific, nor too broad. Is there a specific problem you want to solve? Or do you wish to address issues by [problematizing](https://en.wikipedia.org/wiki/Problematization) your subject?
-1. **Collect research** (related articles, etc.) **and inspiration** (2-3 links or summaries of similar projects). Look at the [Critical Web Design / Radical Software Example Works](https://docs.google.com/spreadsheets/d/1mQ0doWT6tGXm2W-hB5zuz3I8mijGhLSkAe_XrcfMdok/edit#gid=0) for ideas.
-
+1. **Collect research** (related articles, etc.) **and inspiration** (2-3 links or summaries of similar projects). Look at the [Critical Web Design / Radical Software Example Works](https://docs.google.com/spreadsheets/d/1mQ0doWT6tGXm2W-hB5zuz3I8mijGhLSkAe_XrcfMdok/edit#gid=0) for ideas or this list of [](https://www.awwwards.com/25-non-profit-and-social-driven-websites.html).
 1. **Identify new skills or technologies** (e.g. a design method, programming pattern, code library, etc.) you are interested to learn and could potentially use in your project.
-1. **Write a summary** of your topic(s), research, and technology (3–4 sentences). Address why you are drawn to this topic and why it is important to explore. Identify the communities, resources, and issues involved. What frameworks or methodologies might you use?
+1. **Write a summary** of your topic(s), research, and technology (3–4 sentences). Address why you are drawn to this topic and why it is important to explore. Identify the communities, resources, and issues involved. What [frameworks](https://docs.google.com/presentation/d/1OWc_e1pquvwKi4qxJShsZ1Rqia1dbDBcwpxYwdOic7o/edit#slide=id.g165f853ab3b_0_0) or methodologies might you use?
 1. Bring the above to class for the...
 
 <details>
@@ -107,7 +106,6 @@ In groups, brainstorm on your topic(s) use the <a href="https://omundy.github.io
 1. As Realists, after all have posted, talk about each in a group
     - Think more practically, about how you would put the ideas into practice.
 1. After the session, explore the ideas and notes as a critic, to figure out what you can build in the given time
-
 
 </details>
 
@@ -180,7 +178,6 @@ Design iterations of main views.
 
 
 <details>
-
 <summary>In-class activity</summary>
 
 Share your iterations to get feedback before coding the final design.
