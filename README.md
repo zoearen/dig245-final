@@ -124,18 +124,30 @@ Create a pitch deck (10-15 slide Google Presentation) to share and plan your pro
 1. Competition Scan - Examples (2–3) of similar works (in concept or tech) with images and links.
 1. Flowcharts (2–3) showing each step users see, and another [showing how data works](https://www.google.com/search?q=a+flowchart+that+tracks+data+through+the+app&safe=off&tbm=isch) in the app
 1. [Wireframes](https://www.dreamhost.com/blog/how-to-wireframe-website/) showing all the views in the interface (introduction page, forms, results page)
-1. Technology - Include [pseudocode](https://en.wikipedia.org/wiki/Pseudocode) of the main logic of your project. List technologies and demos you think you will need. List the "unknowns"—parts of your idea that you don't know yet how to execute.
+1. Technology - Include [pseudocode](https://en.wikipedia.org/wiki/Pseudocode) of the main logic of your project. List technologies and demos you think you will need. List the "**unknowns**"—parts of your idea that you don't know yet how to execute.
 
 
 
 <details>
-<summary>In-class activity</summary>
+<summary>In-class activity (lightening talks)</summary>
 
-<a href="https://en.wikipedia.org/wiki/Lightning_talk">Lightning talks</a> of your pitches (3 min.)
-
+##### <a href="https://en.wikipedia.org/wiki/Lightning_talk">Lightning talks</a> of your pitches
 1. Share a link to your proposal in Slack.
 1. Present slides on Zoom. 3 minutes max.
 1. 1 minute max for questions / comments. Add others in Slack thread.
+
+</details>
+
+<details>
+<summary>In-class activity (speed dating)</summary>
+
+##### Speed Dating
+
+1. Find a partner.
+1. Share your proposal, progress, and unknowns. (3 min)
+1. Your partner should ask questions and make comments while you make notes. (1 min)
+1. Switch roles and repeat the above.
+1. Switch partners and repeat.
 
 </details>
 
