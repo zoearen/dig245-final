@@ -29,12 +29,10 @@
 					Try their free Instagram-profile-based diagnostic below:
 			</h3><br>
 			<div id="form">
-				<h2> Enter Instagram username <br> </h2>
+				<h2> Enter Instagram username</h2><br>
 					<!--actual functioning elemets-->
-					<form>
-					<input class="form-control" type="text" id="username" placeholder="instagram.com/username/"></input>
-					<input type="submit" id="diagnose-me" onclick="diagnose()"></input>
-					</form>
+				<input class="form-control" type="text" id="username" value=" " placeholder="instagram.com/username/"></input><br>
+				<input type="submit" id="diagnose-me" onclick="diagnose()"></input>
 			</div>
 		</div>
 		<br>
@@ -47,7 +45,7 @@
 			var patient = document.getElementById("username").value;
 
 			function diagnose() {
-			  document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you"+ patient + " are " + emotions[random];
+			  document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you "+ patient + " are feeling " + emotions[random];
 			}
 		</script>
 
