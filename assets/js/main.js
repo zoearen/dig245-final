@@ -2,11 +2,6 @@
 /* javascript */
 
 // Grab all HTML Elements
-document.getElementById("Medication").addEventListener("keyup", myFunction);
-function myFunction() {
-	var elementValue = document.getElementById("Medication").value;
-    document.getElementById("myAnchor").innerHTML = elementValue;
-}
 /*
 // All containers
 const feedback = document.getElementById("feedbacktext");
