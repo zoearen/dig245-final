@@ -15,51 +15,6 @@
 </head>
 
 <body>
-	<div class="container-fluid">
-		<br>
-		<div class="row">
-			<h1> < DIAGNOSIS > </h1>
-		</div>
-		<br>
-	</div>
-
-	<br>
-	<br>
-	<div class= "container" >
-		<div class="row">
-				<img src="assets/img/Dr. Duck.png" alt="Dr. Duck Logo">
-			<!--<div class="col-8" id="diagnostic-box">
-				<div class="word">-->
-				<br><h3>Hi! Welcome to our clinic!<br><br>
-					Our unique system skips the hassle of paperwork, <br>
-					and diagnoses you based on your social media profile alone.<br>
-
-					<br> Try our free Instagram-profile-based diagnostic below:</h3><br></div>
-
-		</div>
-		<div class="row">
-			<h2> Enter your Instagram profile below. </h2>
-			<div class="form-group">
-				<input type="email" class="form-control" id="profile-url" placeholder="instagram.com/yourusername/">
-				 <input type="submit" class="button">
-			</div>
-			<!--actual functioning elemets-->
-			<input type="text" id="username" placeholder="yourusername"></input>
-			<input type="submit" id="diagnose-me" onclick="myFunction()"></input>
-
-			<div id="diagnosis"></div>
-		</div>
-	</div>
-
-	<script>
-		const emotions = ["inadequate.","happy.","sad","upset", "angry", "content"];
-		const random = Math.floor(Math.random() * emotions.length);
-		const patient = document.getElementById("username");
-
-		function myFunction() {
-		  document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that "+ patient + emotions[random];
-		}
-	</script>
 
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
