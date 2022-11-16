@@ -1,0 +1,23 @@
+{
+  "name": "dig245-final",
+  "version": "1.0.0",
+  "description": "Design and program a web application as a creative response to content from the course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoearen/dig245-final.git"
+  },
+  "keywords": [],
+  "author": "Zoe Ren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoearen/dig245-final/issues"
+  },
+  "homepage": "https://github.com/zoearen/dig245-final#readme",
+  "dependencies": {
+    "sentiment": "^5.0.2"
+  }
+}
