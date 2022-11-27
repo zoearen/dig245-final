@@ -16,38 +16,135 @@
   <title>dig245-final</title>
 </head>
 
+
 <body>
-		<br>
-		<div class= "container" >
-			<h1> < DIAGNOSIS > </h1>
-			<img src="assets/img/Dr. Duck.png" alt="Dr. Duck Logo">
-				<!--<div class="col-8" id="diagnostic-box">
-					<div class="word">-->
-			<br>
-			<h3>Dr. Duck does not believe in filling out diagnostic medical surveys.<br>
-					Instead, they want to provide you a diagnosis for your emotional state based on your social media profile.<br><br>
-					Try their free Instagram-profile-based diagnostic below:
-			</h3><br>
-			<div id="form">
-				<h2> Enter Instagram username</h2><br>
-					<!--actual functioning elemets-->
-				<input class="form-control" type="text" id="username" value=" " placeholder="instagram.com/username/"></input><br>
-				<input type="submit" id="diagnose-me" onclick="diagnose()"></input>
+
+	<!--Nav Bar-->
+    <div class="container-fluid nav">
+    </div>
+
+  <!--Splash-->
+    <div class="container-fluid accentCont centeredCont" >
+			<div class="container" >
+				<div class="row centeredCont">
+					<img class="duckLogo" src="assets/img/DrDuck.svg" alt="Dr. Duck Logo">
+				</div>
+				<div class="row">
+					<h1 class="blackText"> Welcome to the clinic!</h1>
+				</div>
 			</div>
+    </div>
+
+		<!--Main Section-->
+		<div class="container-fluid whiteCont">
+
+			<!--Header-->
+      <div class="row">
+				<h1 class="accentText">Instructions</h1>
+			</div>
+
+			<!--Instructions-->
+      <div class="row">
+				<div class="col-2"></div>
+        <div class="col left">
+					<ol>
+						<li>Navigate to one of your social media home/'for you' pages.</li><br>
+						<li>Select all text (Cmd + A), then navigate back to the clinic.</li><br>
+						<li>Paste the text in the text box below, then click the "submit" button.</li>
+					</ol>
+				</div>
+				<div class="col-2"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col" style="margin-bottom: 2rem;">
+          <textarea class="centeredCont" type="textarea" rows="8" placeholder="paste text here" id="inputVal"></textarea><br>
+					<button type="button" class="btn" id="button" onclick="getInputValue();">Submit</button>
+				</div>
+				<div class="col-2"></div>
+      </div>
+		 </div>
+
+
+	<!--PDF Report area *ejs or lookup how to embed html file-->
+	<div class="container" style="display:none; margin-top: 2rem; margin-bottom: 2rem;" id="report">
+
+		<div class="row">
+
+			<div class="col-3">
+				<img class="icon" src="assets/img/DrDuckCircIcon.svg" alt="circicon">
+				<p class="centeredCont">Dr.Duck & Associates</p>
+			</div>
+
+			<div class="col">
+				<div class="container">
+					<div class="row right">
+						<h1>Patient Report</h1>
+					</div>
+					<div class="row right">
+						<p id="date">Date: __/__/__</p>
+						<p id="name">Patient Name: </p>
+					</div>
+				</div>
+			</div>
+
 		</div>
-		<br>
-		<div><h3 id="diagnosis"> </h3></div>
 
+		<div class="row">
+			<h2> Report Summary</h2>
+		</div>
 
-		<script>
-			const emotions = ["inadequate.","happy.","sad.","upset.", "angry.", "content."];
-			const random = Math.floor(Math.random() * emotions.length);
-			var patient = document.getElementById("username").value;
+		<div class="row">
+			<p id="info" class="left">Content Moderator Score: </p>
+			<p id="emotion-quality" class="left">Patient response indicated: Negative Emotions</p>
+			<p id="diagnosis" class=""></p>
+		</div>
 
-			function diagnose() {
-			  document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you "+ patient + " are feeling " + emotions[random];
-			}
-		</script>
+		<div class="accordion" id="accordionExample">
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="headingOne">
+		      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		        Quierky Quack Disorder (QQD) : High Risk
+						Happy Hen Disease (HHD) : High Risk
+		      </button>
+		    </h2>
+		    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+		      <div class="accordion-body">
+		        <strong>You are at risk</strong>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="headingTwo">
+		      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		        Mediocre Mallard Syndrome (MMD): High Risk
+		      </button>
+		    </h2>
+		    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+		      <div class="accordion-body">
+		        <strong>Symptoms:</strong>
+					</div>
+		    </div>
+		  </div>
+		  <div class="accordion-item">
+		    <h2 class="accordion-header" id="headingThree">
+		      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		        Pitiable Pheasant Syndrome (UDS) : High Risk
+						Forlorn fowl
+						Dejected
+						Dismal
+						Woeful
+		      </button>
+		    </h2>
+		    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+		      <div class="accordion-body">
+		        <strong>Symptoms:</strong>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
 
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -55,6 +152,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<!-- Project JS -->
 	<script src="assets/js/main.js"></script>
+	<!-- random select emotions -->
+	<script>
 
+	</script>
 </body>
 </html>

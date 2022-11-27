@@ -1,72 +1,83 @@
-
 /* javascript */
+const happyemotions = ["happy","happy.","happy.", "content."];
+const neutralemotions = ["ok.","fine.","alright."];
+const sademotions = ["inadequate.","sad.","upset.", "angry."];
 
-// Grab all HTML Elements
-/*
-// All containers
-const feedback = document.getElementById("feedbacktext");
-const wholeContainer = document.querySelector(".feedback");
-const resultContainer = document.querySelector(".results");
+const randomhappy = Math.floor(Math.random() * happyemotions.length);
+const randomneutral = Math.floor(Math.random() * neutralemotions.length);
+const randomsad = Math.floor(Math.random() * sademotions.length);
 
-// All controls
-const submit_button = document.getElementById("submit");
-const closeButton = document.querySelector(".close");
-
-// Results
-const emoji = document.querySelector(".emoji");
-const sentiment = document.querySelector(".sentiment");
-
-// Add event listener to submit button, send feedback and
-// name to our node js server application
-submit_button.addEventListener("click",()=>{
-    console.log("Feedback: ",feedback.value);
-
-    // Send POST request to our server
-    const options = {
-        method : "POST",
-        body : JSON.stringify({
-            feedback : feedback.value
-        }),
-        headers : new Headers({
-            'Content-Type' : "application/json"
-        })
-    }
-
-    // Use fetch to request server
-    fetch("/feedback",options)
-        .then(res=>res.json())
-        .then((response)=>{
-            console.log(response.sentiment_score);
-
-            const score = response.sentiment_score;
-
-            // Separate responses according to sentiment_score
-            if(score > 0){
-                emoji.innerHTML = "<p>😄</p>";
-                sentiment.innerHTML = "<p>➕ Positive</p>";
-            }else if(score === 0){
-                emoji.innerHTML = "<p>😐</p>";
-                sentiment.innerHTML = "<p>Neutral</p>";
-            }else{
-                emoji.innerHTML = "<p>😡</p>";
-                sentiment.innerHTML = "<p>➖ Negative</p>";
-            }
-
-            // Result Box should appear
-            resultContainer.classList.add("active");
-            wholeContainer.classList.add("active");
-
-        })
-        .catch(err=>console.error("Error: ",err));
-
-    // Clear all inputs after operation
-    feedback.value = "";
+document.getElementById('button').addEventListener('click', function(){
+    document.getElementById('report').style.display = "block";
 });
 
-// Close Button
+function getInputValue() {
+    //Date variables
+    var date = document.getElementById('date');
+    let currentDate = new Date();
+    let cDay = currentDate.getDate()
+    let cMonth = currentDate.getMonth() + 1
+    let cYear = currentDate.getFullYear()
+    date.innerHTML = "Date: " + cDay + "/" + cMonth + "/" + cYear;
 
-closeButton.addEventListener("click",()=>{
-    wholeContainer.classList.remove("active");
-    resultContainer.classList.remove("active");
-});
-*/
+    //inputVal variables
+    let inputVal = document.getElementById("inputVal").value;
+    var value = JSON.stringify(inputVal);
+
+    //Name variables
+    let arr = value.split(' ');
+    var name = document.getElementById('name');
+    let nameCap = arr[Math.floor(Math.random() * arr.length)];
+    let finalName = nameCap.replace(/"/g, '');
+    name.innerHTML = "Patient Name: " + finalName.toUpperCase();
+
+    //console testers
+    console.log(arr);
+    console.log(name);
+    fetchSentiment(value);
+    /*textSentiment(value);*/
+}
+
+function displayJSON(d) {
+  $("textarea").html(d)
+}
+
+async function fetchSentiment(text) {
+  // data to send to the sentiment api
+  var requestData = {
+    "text": text
+  };
+
+  await fetch('https://sentim-api.herokuapp.com/api/v1/', {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestData)
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(responseData => {
+
+      console.log(
+        responseData.sentences[0].sentence,
+        responseData.sentences[0].sentiment.polarity,
+        responseData.sentences[0].sentiment.type,
+        responseData);
+
+      var sentimentAnalysis = responseData.sentences[0].sentiment.polarity;
+      document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
+
+      if (sentimentAnalysis>0) {
+        document.getElementById("diagnosis").innerHTML = "Your Facebook content recieved a score of " + sentimentAnalysis + ". Dr. Duck has concluded that you are feeling "  + happyemotions[randomhappy];
+      }
+      else if (sentimentAnalysis<0) {
+        document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
+      }
+      else {
+        document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
+      }
+    });
+}
