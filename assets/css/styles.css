@@ -16,7 +16,7 @@ p {
   color: black !important;
 }
 body {
-  background-color: #313034 !important;
+  background-color: white !important;
   font-family: 'IBM Plex Mono', monospace !important;
   /*text-transform: uppercase !important;*/
   color: black !important;
@@ -26,12 +26,25 @@ body {
 textarea {
   width: 100%;
   color: black;
-  border: .1rem solid orange;
+  border: .1rem solid #FF8D4E;
   justify-content: center;
   text-align: center;
   padding-top: .2rem;
 }
-
+footer {
+  color: white;
+  background-color: #FF8D4E;
+  justify-content: center;
+  text-align: center;
+  height: 20rem;
+}
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
+a:active {
+  color: white !important;
+}
 /*classes-------------------------------------------------------------*/
 /* text adjustments */
 .blackText {
@@ -41,7 +54,7 @@ textarea {
   color: #FF8D4E;
 }
 .whiteText {
-  color: #FF8D4E;
+  color: white;
 }
 .left {
   text-align: left;
@@ -58,20 +71,12 @@ textarea {
 .whiteCont {
   background-color: white !important;
   width: 100%;
-  height: 35rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  height: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-.nav {
-  background-color: #4B4B4B !important;
-  width: 100%;
-  height: 2rem;
-  /* padding-left: 1.2rem;
-  padding-right: 1.2rem;
-  padding-top: .2rem;
-  padding-bottom: .2rem; */
-}
-.nav, .accentCont, .whiteCont {
+
+.accentCont, .whiteCont {
   justify-content: center !important;
   padding: 1.2rem;
 }
@@ -81,8 +86,9 @@ textarea {
   max-height: 10rem;
 }
 .icon {
-  max-width: 7rem;
-  max-height: 7rem;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /*containers*/
@@ -145,7 +151,10 @@ textarea {
 }
 
 /*ids------------------------------------------------------------------*/
-
+#iconBox {
+  width:5rem;
+  height:5rem;
+}
 #instructions {
   width: 50% !important;
   justify-content: center !important;
@@ -190,3 +199,99 @@ button:hover {
 }
 
 /*ids------------------------------------------------------------------*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*mainNav*/
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#mainNav .navbar-brand {
+  color: #fff;
+}
+#mainNav .navbar-nav {
+  margin-top: 1rem;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  color: #fff;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color: #FF8D4E;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+  color: #fff;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+  color: #FF8D4E;
+}
+#mainNav .navbar-toggler {
+  font-size: 80%;
+  padding: 0.8rem;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1.75em;
+    transition: font-size 0.3s;
+  }
+  #mainNav .navbar-nav {
+    margin-top: 0;
+  }
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+    color: #FF8D4E !important;
+    background: #fff;
+  }
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+    color: #FF8D4E !important;
+    background: #fff;
+  }
+
+  #mainNav.navbar-shrink {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.5em;
+  }
+}

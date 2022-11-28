@@ -1,160 +1,194 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-		<!--Font here-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <!--Font here-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <title>dig245-final</title>
 </head>
 
 
 <body>
-
-	<!--Nav Bar-->
-    <div class="container-fluid nav">
+	<!-- Navigation-->
+  <nav style="background-color: #FF8D4E !important;"class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <div type="button" class="navbar-brand" ><a href="#home">DIAGNOSIS</a></div>
+      <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #FF8D4E !important;">
+        	Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
   <!--Splash-->
-    <div class="container-fluid accentCont centeredCont" >
-			<div class="container" >
-				<div class="row centeredCont">
-					<img class="duckLogo" src="assets/img/DrDuck.svg" alt="Dr. Duck Logo">
-				</div>
-				<div class="row">
-					<h1 class="blackText"> Welcome to the clinic!</h1>
-				</div>
-			</div>
+  <div class="container-fluid accentCont centeredCont" id="home">
+    <div class="container">
+      <div class="row centeredCont">
+        <img class="duckLogo" src="assets/img/DrDuck.svg" alt="Dr. Duck Logo">
+      </div>
+      <div class="row">
+        <h2 class="whiteText"> Welcome to the clinic!</h2>
+      </div>
+    </div>
+  </div>
+
+  <!--Main Section-->
+  <div class="container-fluid whiteCont" id="diagnosis-section">
+
+    <!--Header-->
+    <div class="row">
+      <h1 class="accentText">Instructions</h1>
     </div>
 
-		<!--Main Section-->
-		<div class="container-fluid whiteCont">
-
-			<!--Header-->
-      <div class="row">
-				<h1 class="accentText">Instructions</h1>
-			</div>
-
-			<!--Instructions-->
-      <div class="row">
-				<div class="col-2"></div>
-        <div class="col left">
-					<ol>
-						<li>Navigate to one of your social media home/'for you' pages.</li><br>
-						<li>Select all text (Cmd + A), then navigate back to the clinic.</li><br>
-						<li>Paste the text in the text box below, then click the "submit" button.</li>
-					</ol>
-				</div>
-				<div class="col-2"></div>
-			</div>
-
-			<div class="row">
-				<div class="col-2"></div>
-				<div class="col" style="margin-bottom: 2rem;">
-          <textarea class="centeredCont" type="textarea" rows="8" placeholder="paste text here" id="inputVal"></textarea><br>
-					<button type="button" class="btn" id="button" onclick="getInputValue();">Submit</button>
-				</div>
-				<div class="col-2"></div>
+    <!--Instructions-->
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col left">
+        <ol>
+          <li>Navigate to one of your social media home/'for you' pages.</li><br>
+          <li>Select all text (Cmd + A), then navigate back to the clinic.</li><br>
+          <li>Paste the text in the text box below, then click the "submit" button.</li>
+        </ol>
       </div>
-		 </div>
+      <div class="col-2"></div>
+    </div>
 
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col" style="margin-bottom: 2rem;">
+        <textarea class="centeredCont" type="textarea" rows="8" placeholder="paste text here" id="inputVal"></textarea><br>
+        <button type="button" class="btn" id="button" onclick="getInputValue(); getNameAndDate();">Diagnose Me!</button>
+      </div>
+      <div class="col-2"></div>
+    </div>
 
-	<!--PDF Report area *ejs or lookup how to embed html file-->
-	<div class="container" style="display:none; margin-top: 2rem; margin-bottom: 2rem;" id="report">
+  </div>
 
-		<div class="row">
+  <!--PDF Report area *ejs or lookup how to embed html file-->
 
-			<div class="col-3">
-				<img class="icon" src="assets/img/DrDuckCircIcon.svg" alt="circicon">
-				<p class="centeredCont">Dr.Duck & Associates</p>
-			</div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
 
-			<div class="col">
-				<div class="container">
-					<div class="row right">
-						<h1>Patient Report</h1>
+    <!-- Modal content -->
+    <div class="modal-content" id="report">
+      <span class="close">&times;</span>
+
+      <div class="row">
+
+        <div class="col-3">
+					<div id="iconBox">
+	          <img class="icon" src="assets/img/DrDuckCircIcon.svg" alt="circicon">
+	          <p class="centeredCont">Dr.Duck & Associates</p>
 					</div>
-					<div class="row right">
-						<p id="date">Date: __/__/__</p>
-						<p id="name">Patient Name: </p>
-					</div>
-				</div>
-			</div>
+        </div>
 
-		</div>
+        <div class="col">
+          <div class="container">
+            <div class="row right">
+              <h1>Patient Report</h1>
+            </div>
+            <div class="row right">
+              <p id="date">Date: __/__/__</p>
+              <p id="name">Patient Name: </p>
+            </div>
+          </div>
+        </div>
 
-		<div class="row">
-			<h2> Report Summary</h2>
-		</div>
+      </div>
+      <!--end row-->
 
-		<div class="row">
-			<p id="info" class="left">Content Moderator Score: </p>
-			<p id="emotion-quality" class="left">Patient response indicated: Negative Emotions</p>
-			<p id="diagnosis" class=""></p>
-		</div>
+      <div class="row">
+        <h2> Report Summary</h2>
+      </div>
 
-		<div class="accordion" id="accordionExample">
-		  <div class="accordion-item">
-		    <h2 class="accordion-header" id="headingOne">
-		      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-		        Quierky Quack Disorder (QQD) : High Risk
-						Happy Hen Disease (HHD) : High Risk
-		      </button>
-		    </h2>
-		    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-		      <div class="accordion-body">
-		        <strong>You are at risk</strong>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="accordion-item">
-		    <h2 class="accordion-header" id="headingTwo">
-		      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-		        Mediocre Mallard Syndrome (MMD): High Risk
-		      </button>
-		    </h2>
-		    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-		      <div class="accordion-body">
-		        <strong>Symptoms:</strong>
-					</div>
-		    </div>
-		  </div>
-		  <div class="accordion-item">
-		    <h2 class="accordion-header" id="headingThree">
-		      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-		        Pitiable Pheasant Syndrome (UDS) : High Risk
-						Forlorn fowl
-						Dejected
-						Dismal
-						Woeful
-		      </button>
-		    </h2>
-		    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-		      <div class="accordion-body">
-		        <strong>Symptoms:</strong>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>
+      <div class="row">
+        <p id="info" class="left">Content Moderator Score: </p>
+        <p id="emotion-quality" class="left">Patient response indicated: Negative Emotions</p>
+        <p id="diagnosis" class=""></p>
+      </div>
 
-	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<!-- Boostrap JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-	<!-- Project JS -->
-	<script src="assets/js/main.js"></script>
-	<!-- random select emotions -->
-	<script>
+<!--
+      <div class="accordion" id="accordionExample">
 
-	</script>
+				<div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Quierky Quack Disorder (QQD) : High Risk
+              Happy Hen Disease (HHD) : High Risk
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>You are at risk</strong>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Mediocre Mallard Syndrome (MMD): High Risk
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Symptoms:</strong>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Pitiable Pheasant Syndrome (UDS) : High Risk
+              Forlorn fowl
+              Dejected
+              Dismal
+              Woeful
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Symptoms:</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+-->
+    </div>
+
+  </div>
+
+
+	<footer id="about">
+		<p>About this project</p>
+	</footer>
+
+
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Boostrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <!-- Project JS -->
+  <script src="assets/js/main.js"></script>
+  <!-- random select emotions -->
+  <script>
+
+  </script>
+
 </body>
+
 </html>
