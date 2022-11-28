@@ -56,42 +56,38 @@ function displayJSON(d) {
 
 async function fetchSentiment(text) {
   // data to send to the sentiment api
-  var requestData = {
-    "text": text
+
+  const formdata = new FormData();
+  formdata.append("key", "d465489ee701fc545ad8161d0c4e1137");
+  formdata.append("txt", text);
+  formdata.append("lang", "en");  // 2-letter code, like en es fr ...
+
+  const requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: 'follow'
   };
 
-  await fetch('https://sentim-api.herokuapp.com/api/v1/', {
-      method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestData)
-    })
-    .then(response => {
-      return response.json();
-    })
-    .then(responseData => {
+  const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+    .then(response => ({
+      status: response.status,
+      body: response.json()
+    }))
+    .then(({ status, body }) => console.log(status, body))
+    .catch(error => console.log('error', error));
+  /*
+  var sentimentAnalysis = response.scoretag;
+  document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
 
-      console.log(
-        responseData.sentences[0].sentence,
-        responseData.sentences[0].sentiment.polarity,
-        responseData.sentences[0].sentiment.type,
-        responseData);
-
-      var sentimentAnalysis = responseData.sentences[0].sentiment.polarity;
-      document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
-
-      if (sentimentAnalysis>0) {
-        document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
-      }
-      else if (sentimentAnalysis<0) {
+  if (sentimentAnalysis>0) {
+    document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
+  }
+  else if (sentimentAnalysis<0) {
         document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
-      }
-      else {
+  }
+  else {
         document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
-      }
-    });
+  }*/
 }
 
 /*--------------------MODAL SHIT---------------------------*/
