@@ -10,7 +10,6 @@ for (var i = 0; i < document.links.length; i++) {
 document.links[current].className = 'current';
 //end button
 
-
 /*--------------------ARRAYS/VARIABLES---------------------------*/
 const happyemotions = ["happy hopper.","happy.","content clam.", "content."];
 const neutralemotions = ["ok.","fine.","alright."];
@@ -20,19 +19,15 @@ const randomhappy = Math.floor(Math.random() * happyemotions.length);
 const randomneutral = Math.floor(Math.random() * neutralemotions.length);
 const randomsad = Math.floor(Math.random() * sademotions.length);
 
-document.getElementById('button').addEventListener('click', function(){
-    document.getElementById('report').style.display = "block";
-});
-
 function getNameAndDate() {
   //Date variables
   var date = document.getElementById('date');
   let currentDate = new Date();
-  let cDay = currentDate.getDate()
-  let cMonth = currentDate.getMonth() + 1
-  let cYear = currentDate.getFullYear()
+  let cDay = currentDate.getDate();
+  let cMonth = currentDate.getMonth() + 1;
+  let cYear = currentDate.getFullYear();
   date.innerHTML = "Date: " + cDay + "/" + cMonth + "/" + cYear;
-
+  console.log("Date: " + cDay + "/" + cMonth + "/" + cYear);
   //inputVal variables
   let inputVal = document.getElementById("inputVal").value;
   var value = JSON.stringify(inputVal);
@@ -43,7 +38,7 @@ function getNameAndDate() {
   let nameCap = arr[Math.floor(Math.random() * arr.length)];
   let finalName = nameCap.replace(/"/g, '');
   name.innerHTML = "Patient Name: " + finalName.toUpperCase();
-
+  console.log(finalName);
 }
 
 function getInputValue() {
@@ -56,7 +51,7 @@ function getInputValue() {
 }
 
 function displayJSON(d) {
-  $("textarea").html(d)
+  $("textarea").html(d);
 }
 
 async function fetchSentiment(text) {
@@ -110,21 +105,21 @@ var btn = document.getElementById("button");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
-btn.onclick = function() {
+function display() {
   modal.style.display = "block";
-}
+};
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+function exit() {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 /*end modal shit*/
 
 /*--------------------NAV BAR---------------------------*/
@@ -137,9 +132,9 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+            navbarCollapsible.classList.remove('navbar-shrink');
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navbarCollapsible.classList.add('navbar-shrink');
         }
 
     };
@@ -157,7 +152,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             offset: 72,
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');

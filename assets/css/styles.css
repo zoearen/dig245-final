@@ -120,36 +120,6 @@ a:active {
   justify-content: center !important;
 }
 
-/* Report Sections */
-.col1 {
-  border: .5rem 0rem .5rem .5rem .5rem ;
-}
-.col2 {
-  border: .5rem 0rem .5rem 0rem ;
-}
-.col3 {
-  border: .5rem .5rem .5rem 0rem;
-}
-.positive {
-  border: solid green;
-  background-color: lightgreen;
-}
-.negative {
-  border:  solid red;
-  background-color: pink;
-}
-.neutral {
-  border: solid grey;
-  background-color: lightgrey;
-}
-/*form*/
-.form {
-  width: 612px;
-  height: 792px;
-  background-color: white;
-  margin: 2rem;
-}
-
 /*ids------------------------------------------------------------------*/
 #iconBox {
   width:5rem;

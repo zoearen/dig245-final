@@ -72,7 +72,7 @@
       <div class="col-2"></div>
       <div class="col" style="margin-bottom: 2rem;">
         <textarea class="centeredCont" type="textarea" rows="8" placeholder="paste text here" id="inputVal"></textarea><br>
-        <button type="button" class="btn" id="button" onclick="getInputValue(); getNameAndDate();">Diagnose Me!</button>
+        <button type="button" class="btn" id="button" onclick="getInputValue(); getNameAndDate(); display();">Diagnose Me!</button>
       </div>
       <div class="col-2"></div>
     </div>
@@ -86,7 +86,7 @@
 
     <!-- Modal content -->
     <div class="modal-content" id="report">
-      <span class="close">&times;</span>
+      <span class="close" onclick="exit();">&times;</span>
 
       <div class="row">
 
@@ -118,10 +118,11 @@
 
       <div class="row">
         <p id="info" class="left">Content Moderator Score: </p>
-        <p id="emotion-quality" class="left">Patient response indicated: Negative Emotions</p>
         <p id="diagnosis" class=""></p>
       </div>
 
+		</div>
+	</div>
 <!--
       <div class="accordion" id="accordionExample">
 
@@ -168,9 +169,7 @@
         </div>
       </div>
 -->
-    </div>
 
-  </div>
 
 
 	<footer id="about">
