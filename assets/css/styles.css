@@ -9,13 +9,12 @@ h2 {
   font-size: 24px !important;
 }
 h3 {
-  font-weight: 300 !important;
-  font-size: 18px !important;
-  color: white !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
 }
 p {
   color: black !important;
-  font-size: 18px !important;
+  font-size: 12px !important;
 }
 body {
   background-color: white !important;
@@ -138,7 +137,7 @@ a:active {
 #report {
   color: black !important;
   background-color: white;
-  padding: 50px;
+  padding: 2rem;
   justify-content: center !important;
 }
 /*button shit*/

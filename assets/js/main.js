@@ -26,8 +26,8 @@ function getNameAndDate() {
   let cDay = currentDate.getDate();
   let cMonth = currentDate.getMonth() + 1;
   let cYear = currentDate.getFullYear();
-  date.innerHTML = "Date: " + cDay + "/" + cMonth + "/" + cYear;
-  console.log("Date: " + cDay + "/" + cMonth + "/" + cYear);
+  date.innerHTML = "<strong>Date: </strong>" + cDay + "/" + cMonth + "/" + cYear;
+
   //inputVal variables
   let inputVal = document.getElementById("inputVal").value;
   var value = JSON.stringify(inputVal);
@@ -37,7 +37,7 @@ function getNameAndDate() {
   var name = document.getElementById('name');
   let nameCap = arr[Math.floor(Math.random() * arr.length)];
   let finalName = nameCap.replace(/"/g, '');
-  name.innerHTML = "Patient Name: " + finalName.toUpperCase();
+  name.innerHTML = "<strong>Name: </strong>" + finalName.toUpperCase();
   console.log(finalName);
 }
 
@@ -66,26 +66,35 @@ async function fetchSentiment(text) {
     body: formdata,
     redirect: 'follow'
   };
+
   const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
-    .then(response => ({
+    .then(response =>
+      {return response.json()}
+      ({
       status: response.status,
       body: response.json()
-    }))
-    .then(({ status, body }) => console.log(status, body))
+    })
+  )
+    .then(body =>
+      {console.log(body);
+        console.log(body.score_tag);
+        var sentimentAnalysis = body.score_tag;
+        document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
+
+        if (sentimentAnalysis='P') {
+          document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
+        }
+        else if (sentimentAnalysis='N') {
+              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
+        }
+        else {
+              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
+        }
+      }
+    )
     .catch(error => console.log('error', error));
-  /*
-  var sentimentAnalysis = response.scoretag;
-  document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
-  if (sentimentAnalysis>0) {
-    document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
-  }
-  else if (sentimentAnalysis<0) {
-        document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];}
-  else {
-        document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];}*/
+
 }
-
-
 /*--------------------MODAL SHIT---------------------------*/
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -99,19 +108,19 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal
 function display() {
   modal.style.display = "block";
-};
+}
 
 // When the user clicks on <span> (x), close the modal
 function exit() {
   modal.style.display = "none";
-};
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-};
+}
 /*end modal shit*/
 
 /*--------------------NAV BAR---------------------------*/
