@@ -67,34 +67,32 @@ async function fetchSentiment(text) {
     redirect: 'follow'
   };
 
-  const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+  var response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
     .then(response =>
-      {return response.json()}
+      {return response.json();}
       ({
       status: response.status,
       body: response.json()
-    })
-  )
+    }))
+
     .then(body =>
       {console.log(body);
-        console.log(body.score_tag);
         var sentimentAnalysis = body.score_tag;
         document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
 
-        if (sentimentAnalysis='P') {
+        if (sentimentAnalysis=='P') {
           document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
         }
-        else if (sentimentAnalysis='N') {
+        else if (sentimentAnalysis=='N') {
               document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
         }
         else {
               document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
-        }
-      }
-    )
-    .catch(error => console.log('error', error));
+        }})
 
+    .catch(error => console.log('error', error));
 }
+
 /*--------------------MODAL SHIT---------------------------*/
 // Get the modal
 var modal = document.getElementById("myModal");
