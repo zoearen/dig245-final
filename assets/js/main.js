@@ -56,81 +56,34 @@ function displayJSON(d) {
 
 async function fetchSentiment(text) {
   // data to send to the sentiment api
-  const formData = new FormData();
+  const formdata = new FormData();
   formdata.append("key", "d465489ee701fc545ad8161d0c4e1137");
   formdata.append("txt", text);
-  formdata.append("model", "Emotion_en");  // like IAB_2.0_en
+  formdata.append("lang", "en");  // 2-letter code, like en es fr ...
 
-  const requestOpt = {
+  const requestOptions = {
     method: 'POST',
-    body: formData,
+    body: formdata,
     redirect: 'follow'
   };
-
-  const emotionResponse = fetch("https://api.meaningcloud.com/deepcategorization-1.0", requestOpt)
-    .then(emotionResponse =>
-      {return emotionResponse.json()})
-
-    .then(body =>
-      {console.log(body);})
-
-    // .then(body =>
-    //   {console.log(body);
-    //     console.log(body.score_tag);
-    //     var sentimentAnalysis = body.name;
-    //     document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
-    //
-    //     if (sentimentAnalysis='P') {
-    //       document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
-    //     }
-    //     else if (sentimentAnalysis='N') {
-    //           document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
-    //     }
-    //     else {
-    //           document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
-    //     }
-    //   }
-    // )
-    // .catch(error => console.log('error', error));
+  const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+    .then(response => ({
+      status: response.status,
+      body: response.json()
+    }))
+    .then(({ status, body }) => console.log(status, body))
+    .catch(error => console.log('error', error));
+  /*
+  var sentimentAnalysis = response.scoretag;
+  document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
+  if (sentimentAnalysis>0) {
+    document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
   }
-  // const formdata = new FormData();
-  // formdata.append("key", "d465489ee701fc545ad8161d0c4e1137");
-  // formdata.append("txt", text);
-  // formdata.append("lang", "en");  // 2-letter code, like en es fr ...
-  //
-  // const requestOptions = {
-  //   method: 'POST',
-  //   body: formdata,
-  //   redirect: 'follow'
-  // };
-  //
-  // const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
-  //   .then(response =>
-  //     {return response.json()}
-    //   ({
-    //   status: response.status,
-    //   body: response.json()
-    // })
-  //)
-    // .then(body =>
-    //   {console.log(body);
-    //     console.log(body.score_tag);
-    //     var sentimentAnalysis = body.score_tag;
-    //     document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
-    //
-    //     if (sentimentAnalysis='P') {
-    //       document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
-    //     }
-    //     else if (sentimentAnalysis='N') {
-    //           document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
-    //     }
-    //     else {
-    //           document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
-    //     }
-    //   }
-    // )
-    //.catch(error => console.log('error', error));
-
+  else if (sentimentAnalysis<0) {
+        document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];}
+  else {
+        document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];}*/
+}
 
 
 /*--------------------MODAL SHIT---------------------------*/
