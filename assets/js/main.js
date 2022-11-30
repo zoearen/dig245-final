@@ -48,6 +48,7 @@ function getInputValue() {
 
     //sentiment analysis call
     fetchSentiment(value);
+    getNameAndDate();
 }
 
 function displayJSON(d) {
