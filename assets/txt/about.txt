@@ -1,0 +1,15 @@
+
+Algorithms from Facebook, Google, Tiktok, Twitter, etc., can learn a lot
+about who we are based on our online activity... they might even more
+about your mental health and insecurities than your primary care clinition.
+
+
+This project is a mock up patient-diagnostic technology that "extracts"
+your online activity to determine you diagnosis.
+
+
+This project simulates an online diagnostic survey in a simplified form.
+The code is a representation of a possible future for patient diagnosis
+in the healthcare industry: diagnoses based on user analytics.
+
+Although it is a very simplified mock-up

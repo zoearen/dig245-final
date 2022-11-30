@@ -9,11 +9,10 @@ h2 {
   font-size: 24px !important;
 }
 h3 {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   font-size: 16px !important;
 }
 p {
-  color: black !important;
   font-size: 12px !important;
 }
 body {
@@ -32,13 +31,7 @@ textarea {
   text-align: center;
   padding-top: .2rem;
 }
-footer {
-  color: white;
-  background-color: #FF8D4E;
-  justify-content: center;
-  text-align: center;
-  height: 20rem;
-}
+
 a {
   text-decoration: none !important;
   color: white !important;
@@ -266,18 +259,30 @@ button:hover {
     font-size: 1.5em;
   }
 }
+/*-------------------------NAVIGATION----------------------------------*/
+/*-------------------------HEADER/SPLASH----------------------------------*/
+/*-------------------------MAIN CONTENT----------------------------------*/
+/*-------------------------FOOTER----------------------------------*/
+footer {
+  color: white !important;
+  background-color: #FF8D4E;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
 
-// Small devices (landscape phones, 576px and up)
+/*-------------------------RESPONSIVE LAYOUT----------------------------------*/
+/* sm */
 @media (min-width: 576px) { ... }
 
-// Medium devices (tablets, 768px and up)
+/* med */
 @media (min-width: 768px) { ... }
 
-// Large devices (desktops, 992px and up)
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { ... }
 
-// X-Large devices (large desktops, 1200px and up)
+/* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { ... }
 
-// XX-Large devices (larger desktops, 1400px and up)
+/* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) { ... }

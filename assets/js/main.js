@@ -41,6 +41,47 @@ function getNameAndDate() {
   console.log(finalName);
 }
 
+function displayJSON(d) {
+  $("textarea").html(d);
+}
+
+async function fetchSentiment(text) {
+  // data to send to the sentiment api
+  const formdata = new FormData();
+  formdata.append("key", "d465489ee701fc545ad8161d0c4e1137");
+  formdata.append("txt", text);
+  formdata.append("lang", "en");  // 2-letter code, like en es fr ...
+
+  const requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: 'follow'
+  };
+
+  var response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+    .then(response =>
+      {return response.json();})
+
+    .then(body =>
+      {console.log(body);
+        console.log(body.score_tag);
+        var sentimentAnalysis = body.score_tag;
+        document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
+
+        if (sentimentAnalysis=='P') {
+          document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
+        }
+        else if (sentimentAnalysis=='N') {
+              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
+        }
+        else {
+              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
+        }
+      }
+    )
+    .catch(error => console.log('error', error));
+}
+
 function getDiagnosis(){
   const happydiagnoses = ["Happy Hummer Syndrome", "Cheerful Chick Syndrome"];
   const saddiagnoses = ["Angry Avian Disorder", "Inadequate Ibis Complex"];
@@ -67,66 +108,24 @@ function getInputValue() {
     //inputVal variables
     let inputVal = document.getElementById("inputVal").value;
     var value = JSON.stringify(inputVal);
-
-
-    try {
-      fetchSentiment(value);
+    if (value=="") {
+      alert("please insert text");
+      return;
     }
 
-    catch ( e ) {
-      getDiagnosis();
-    }
-
-    finally {
-      getNameAndDate();
-    }
-}
-
-
-
-function displayJSON(d) {
-  $("textarea").html(d);
-}
-
-async function fetchSentiment(text) {
-  // data to send to the sentiment api
-  const formdata = new FormData();
-  formdata.append("key", "d465489ee701fc545ad8161d0c4e1137");
-  formdata.append("txt", text);
-  formdata.append("lang", "en");  // 2-letter code, like en es fr ...
-
-  const requestOptions = {
-    method: 'POST',
-    body: formdata,
-    redirect: 'follow'
-  };
-
-  var response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
-    .then(response =>
-      {return response.json()}
-      ({
-      status: response.status,
-      body: response.json()
-    })
-  )
-    .then(body =>
-      {console.log(body);
-        console.log(body.score_tag);
-        var sentimentAnalysis = body.score_tag;
-        document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
-
-        if (sentimentAnalysis='P') {
-          document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
-        }
-        else if (sentimentAnalysis='N') {
-              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
-        }
-        else {
-              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
-        }
+    else {
+      try {
+        fetchSentiment(value);
       }
-    )
-    .catch(error => console.log('error', error));
+
+      catch ( e ) {
+        getDiagnosis();
+      }
+
+      finally {
+        getNameAndDate();
+      }
+    }
 }
 
 /*--------------------MODAL SHIT---------------------------*/
@@ -157,7 +156,7 @@ window.onclick = function(event) {
 };
 /*end modal shit*/
 
-/*--------------------NAV BAR-------------------------
+/*--------------------NAV BAR-------------------------*/
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -203,4 +202,3 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
---*/
