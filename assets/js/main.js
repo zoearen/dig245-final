@@ -41,15 +41,48 @@ function getNameAndDate() {
   console.log(finalName);
 }
 
+function getDiagnosis(){
+  const happydiagnoses = ["Happy Hummer Syndrome", "Cheerful Chick Syndrome"];
+  const saddiagnoses = ["Angry Avian Disorder", "Inadequate Ibis Complex"];
+  const neudiagnoses = ["Indifferent Ibis Complex", "Mellow Mallard Syndrome"];
+
+  const randhap = Math.floor(Math.random() * happydiagnoses.length);
+  const randsad = Math.floor(Math.random() * saddiagnoses.length);
+  const randneu = Math.floor(Math.random() * neudiagnoses.length);
+  var sentimentAnalysis = Math.random(20);
+  document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
+
+  if (sentimentAnalysis>10) {
+    document.getElementById("diagnosis").innerHTML = "Dr. Duck has diagnosed you with <strong>"  + happydiagnoses[randhap] + "</strong>";
+  }
+  else if (sentimentAnalysis<10) {
+        document.getElementById("diagnosis").innerHTML = "Dr. Duck has diagnosed you with <strong>"  + saddiagnoses[randsad];
+  }
+  else {
+        document.getElementById("diagnosis").innerHTML = "Dr. Duck has diagnosed you with <strong>" + neudiagnoses[randneu];
+  }
+}
+
 function getInputValue() {
     //inputVal variables
     let inputVal = document.getElementById("inputVal").value;
     var value = JSON.stringify(inputVal);
 
-    //sentiment analysis call
-    fetchSentiment(value);
-    getNameAndDate();
+
+    try {
+      fetchSentiment(value);
+    }
+
+    catch ( e ) {
+      getDiagnosis();
+    }
+
+    finally {
+      getNameAndDate();
+    }
 }
+
+
 
 function displayJSON(d) {
   $("textarea").html(d);
@@ -70,27 +103,29 @@ async function fetchSentiment(text) {
 
   var response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
     .then(response =>
-      {return response.json();}
+      {return response.json()}
       ({
       status: response.status,
       body: response.json()
-    }))
-
+    })
+  )
     .then(body =>
       {console.log(body);
+        console.log(body.score_tag);
         var sentimentAnalysis = body.score_tag;
         document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
 
-        if (sentimentAnalysis=='P') {
+        if (sentimentAnalysis='P') {
           document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
         }
-        else if (sentimentAnalysis=='N') {
+        else if (sentimentAnalysis='N') {
               document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
         }
         else {
               document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
-        }})
-
+        }
+      }
+    )
     .catch(error => console.log('error', error));
 }
 
@@ -122,7 +157,7 @@ window.onclick = function(event) {
 };
 /*end modal shit*/
 
-/*--------------------NAV BAR---------------------------*/
+/*--------------------NAV BAR-------------------------
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -168,3 +203,4 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+--*/
