@@ -97,11 +97,11 @@ async function fetchSentiment(text) {
         } else if (sentimentAnalysis=='N') {
           const condition = sademotions[randomsad];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>negative</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
-          document.getElementById("symptoms").innerHTML = "<ul><li>Spiritless apathy</li><li>Passive indifference</li><li>Impartial detachment</li></ul>" ;
+          document.getElementById("symptoms").innerHTML = "<ul><li>Lack of emotions</li><li>Unending drowsiness</li><li>Low self-esteem</li></ul>" ;
         } else {
           const condition = neutralemotions[randomneutral];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>neutral</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
-          document.getElementById("symptoms").innerHTML = "<ul><li>Dispirited disdain</li><li>Unending drowsiness</li><li>Shiftless</li></ul>" ;
+          document.getElementById("symptoms").innerHTML = "<ul><li>Spiritless apathy</li><li>Passive indifference</li><li>Impartial detachment</li></ul>" ;
         }
       }
     )

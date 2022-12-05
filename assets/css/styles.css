@@ -263,8 +263,8 @@ footer {
   p {font-size: 16px !important;}
   footer {font-size: 12px !important;}
   .socials {
-    width: 10px !important;
-    height: 10px !important;
+    width: 15px !important;
+    height: 15px !important;
   }
 }
 
@@ -303,5 +303,5 @@ footer {
   p {font-size: 22px !important;}
   footer {font-size: 16px !important;}
   .socials {
-    width: 30px !important;
-    height: 30px !important;}}
+    width: 35px !important;
+    height: 35px !important;}}
