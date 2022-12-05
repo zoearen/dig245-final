@@ -20,7 +20,7 @@
 <body>
 
   <!-- Navigation-->
-  <nav style="background-color: #4B4B4B !important; height:4rem !important;" class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+  <nav style="background-color: #4B4B4B !important; height:6rem !important;" class="navbar navbar-expand text-uppercase fixed-top" id="mainNav">
     <div class="container">
       <div type="button" class="navbar-brand"><a href="#home">DIAGNOSIS</a>
       </div>
@@ -34,8 +34,13 @@
       </div>
   </nav>
 
+  <!--Spacer-->
+  <div class="accent spacer" id="home"></div>
+  <div class="accent spacer"></div>
+  <div class="accent spacer"></div>
+
   <!--Splash-->
-  <div class="container-fluid accentCont centeredCont" id="home" style="margin-top: 4rem !important;">
+  <div class="container-fluid accentCont centeredCont">
     <div class="container">
       <div class="row centeredCont">
         <img class="duckLogo" src="assets/img/DrDuck.svg" alt="Dr. Duck Logo">
@@ -50,8 +55,13 @@
     </div>
   </div>
 
+  <!--Spacer-->
+  <div class="accent spacer"></div>
+  <div class="accent spacer"></div>
+  <div id="diagnosis-section" class="white spacer"></div>
+  <div class="white spacer"></div>
+
   <!--Main Section-->
-  <div id="diagnosis-section" class="accentCont"></div>
   <section class="container-fluid whiteCont">
     <!--Header-->
     <div class="row">
@@ -62,10 +72,16 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col">
+        <div style="justify-items: center !important;">
+          <a href='http://www.facebook.com/login.php'><img src="assets/img/facebook.png" class="socials"></a>
+          <a href='https://instagram.com/accounts/login/'><img src="assets/img/instagram.png" class="socials"></a>
+          <a href='https://twitter.com/login'><img src="assets/img/Twitter.png" class="socials"></a>
+          <a href='https://www.reddit.com/login'><img src="assets/img/reddit.png" class="socials"></a>
+        </div><br>
         <ol class="left">
-          <li><p>Navigate to one of your social media home/'for you' pages.</p></li><br>
+          <li><p>Click on one of the icons, or navigate to a social media home page.</p></li><br>
           <li><p>Select all text (Cmd + A), then navigate back to the clinic.</p></li><br>
-          <li><p>Paste the text in the text box below, then click the "submit" button.</p></li>
+          <li><p>Paste the text in the text box below, then click the "Submit" button below.</p></li>
         </ol>
       </div>
       <div class="col-2"></div>
@@ -74,66 +90,70 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col" style="margin-bottom: 2rem;">
-        <textarea class="centeredCont" type="textarea" rows="8" placeholder="paste text here:" id="inputVal"></textarea><br>
-        <button type="button" class="btn" id="button" onclick="getInputValue()"> Diagnose Me! </button>
+        <textarea class="centeredCont" type="textarea" rows="4" placeholder="paste text here:" id="inputVal"></textarea><br>
+        <button type="button" class="btn" id="button" onclick="getInputValue()"> Submit </button>
       </div>
       <div class="col-2"></div>
     </div>
 
   </section>
-
   <!--end diagnosis-->
 
+  <!--Spacer-->
+  <div class="white spacer"></div>
+  <div class="accent spacer"></div>
+
   <!-- The Modal -->
-  <div id="myModal" class="modal"> -->
+  <div id="myModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content" id="report">
       <span class="close" onclick="exit();">&times;</span>
 
-      <div class="row">
-        <!--name/date-->
-        <div class="col-12 left">
-          <p id="date"></p>
-          <p id="name"></p>
-        </div>
-        <!--report heading-->
-        <h3>Report Summary</h3>
-      </div>
       <div class="container" style="padding-left: 2rem !important; padding-right: 2rem;">
+        <div class="row">
+          <!--name/date-->
+          <div class="col-12 left">
+            <p id="date"></p>
+            <p id="name"></p>
+          </div>
+          <!--report heading-->
+          <h3>Report Summary</h3>
+        </div>
+
         <div class="row">
           <p id="info"></p>
           <p id="diagnosis"></p>
         </div>
+
+        <div class="row centeredCont">
+          <p><u>Common Symptoms</u></p>
+          <div class="container centeredCont">
+            <p id="symptoms" class="left"></p>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <p>Suggested Action Plan:</p>
+          <div class="col">
+            <button id="treatment1"></button>
+          </div>
+          <div class="col">
+          <button id="treatment2"></button>
+        </div> -->
+
         <!--end moderator score-->
-        <div class="container" style="justify-content: center !important; width:70% !important;">
-          <div class="accordion" id="accordionExample">
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button id="condition" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong></strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="centeredCont" style="padding-top: 2rem !important;">
-            <button style="" onClick="window.location.reload();">New Diagnosis</button>
-          </div>
+        <div class="centeredCont" style="padding-top: 2rem !important;">
+          <button style="" onClick="window.location.reload();">New Diagnosis</button>
         </div>
       </div>
     </div>
   </div>
 
-<!--- ABOUT-------------------------------->
+  <!--- ABOUT-------------------------------->
   <section id="about">
     <div class="container-fluid accentCont">
-      <div style="padding-left: 15%; padding-right: 15%; padding-bottom:6rem;">
+      <div style="padding-left: 15%; padding-right: 15%;">
         <h1>About</h1><br>
         <p><strong>Background</strong></p>
         <p>While many studies have been done to correlate different kinds of media exposure to different behavior and mental health issues (i.e. violent video games have been correlated with higher levels of aggression in children, social media use has been correlated with lower self-esteem in females), very doctors I know have asked about my online behavior, and few online behavioral and mental health diagnostic surveys acknowledge the correlations through their questions.
@@ -151,6 +171,8 @@
       </div>
     </div>
   </section>
+  <!--Spacer-->
+  <div class="accent spacer"></div>
 
   <!--- FOOTER-------------------------------->
   <footer>
@@ -171,7 +193,6 @@
   <!-- Project JS -->
   <script src="assets/js/main.js"></script>
   <!-- random select emotions -->
-
 </body>
 
 </html>

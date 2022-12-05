@@ -1,20 +1,5 @@
 /* css */
 /*elements------------------------------------------------------------*/
-h1 {
-  font-weight: 500 !important;
-  font-size: 32px !important;
-}
-h2 {
-  font-weight: 300 !important;
-  font-size: 24px !important;
-}
-h3 {
-  font-weight: 500 !important;
-  font-size: 16px !important;
-}
-p {
-  font-size: 12px !important;
-}
 body {
   background-color: white !important;
   font-family: 'IBM Plex Mono', monospace !important;
@@ -22,25 +7,24 @@ body {
   color: black !important;
   text-align: center !important;
   justify-content: space-evenly !important;
-  font-size: 12px !important;
-}
+  font-size: 12px !important;}
+
+h1 {font-weight: 500 !important; font-size: 32px !important;}
+h2 {font-weight: 300 !important; font-size: 24px !important;}
+h3 {font-weight: 500 !important; font-size: 16px !important;}
+p {font-size: 12px !important;}
 textarea {
   width: 100%;
   color: black;
   justify-content: center;
   text-align: center;
-  padding-top: .2rem;
-}
-
+  padding-top: .2rem;}
 a {
   text-decoration: none !important;
   color: white !important;
   padding-top: .5rem !important;
-  padding-bottom: .5rem !important;
-}
-a:active {
-  color: white !important;
-}
+  padding-bottom: .5rem !important;}
+a:active {color: white !important;}
 /*classes-------------------------------------------------------------*/
 /* text adjustments */
 .blackText {
@@ -61,14 +45,12 @@ a:active {
 /* containers */
 .accentCont {
   background-color:  #FF8D4E !important;
-  padding-top: 6rem !important;
 }
 .whiteCont {
   background-color: white !important;
   height: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
+
 .accentCont, .whiteCont {
   justify-content: center !important;
   padding: 1.2rem;
@@ -119,7 +101,9 @@ a:active {
   width: 15px;
   height: 15px;
 }
-
+.spacer {height: 3rem;}
+.accent {background-color: #FF8D4E !important;}
+.white {background-color: white !important;}
 /*ids------------------------------------------------------------------*/
 #iconBox {
   width:5rem;
@@ -272,29 +256,29 @@ footer {
 
 /* sm */
 @media (min-width: 576px) {
-  h1 {font-size: 44px !important;}
-  h2 {font-size: 34px !important;}
-  h3 {font-size: 22px !important;}
-  p {font-size: 18px !important;}
-
+  body {font-size: 16px !important;}
+  h1 {font-size: 32px !important;}
+  h2 {font-size: 24px !important;}
+  h3 {font-size: 20px !important;}
+  p {font-size: 16px !important;}
+  footer {font-size: 12px !important;}
   .socials {
-    width: 15px !important;
-    height: 15px !important;
+    width: 10px !important;
+    height: 10px !important;
   }
 }
 
 /* med */
 @media (min-width: 768px) {
-  h1 {font-size: 64px !important;}
-  h2 {font-size: 52px !important;}
-  h3 {font-size: 44px !important;}
-  p {font-size: 32 !important;}
+  body {font-size: 18px !important;}
+  h1 {font-size: 44px !important;}
+  h2 {font-size: 32px !important;}
+  h3 {font-size: 24px !important;}
+  p {font-size: 18px !important;}
+  footer {font-size: 10px !important;}
   .socials {
-    width: 15px !important;
-    height: 15px !important;
-  }
-  footer {
-    font-size: 15px !important;
+    width: 20px !important;
+    height: 20px !important;
   }
 }
 
@@ -303,16 +287,21 @@ footer {
   body {font-size: 18px !important;}
   h1 {font-size: 44px !important;}
   h2 {font-size: 32px !important;}
-  h3 {font-size: 32px !important;}
+  h3 {font-size: 24px !important;}
   p {font-size: 18px !important;}
-  footer {font-size: 18px !important;}
+  footer {font-size: 14px !important;}
   .socials {
     width: 30px !important;
-    height: 30px !important;
-  }
-}
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
+    height: 30px !important;}}
 
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) { ... }
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  body {font-size: 22px !important;}
+  h1 {font-size: 48px !important;}
+  h2 {font-size: 36px !important;}
+  h3 {font-size: 28px !important;}
+  p {font-size: 22px !important;}
+  footer {font-size: 16px !important;}
+  .socials {
+    width: 30px !important;
+    height: 30px !important;}}

@@ -19,99 +19,6 @@ const randomhappy = Math.floor(Math.random() * happyemotions.length);
 const randomneutral = Math.floor(Math.random() * neutralemotions.length);
 const randomsad = Math.floor(Math.random() * sademotions.length);
 
-function getNameAndDate() {
-  //Date variables
-  var date = document.getElementById('date');
-  let currentDate = new Date();
-  let cDay = currentDate.getDate();
-  let cMonth = currentDate.getMonth() + 1;
-  let cYear = currentDate.getFullYear();
-  date.innerHTML = "<strong>Date: </strong>" + cDay + "/" + cMonth + "/" + cYear;
-
-  //inputVal variables
-  let inputVal = document.getElementById("inputVal").value;
-  var value = JSON.stringify(inputVal);
-
-  //Name variables
-  let arr = value.split(' ');
-  var name = document.getElementById('name');
-  let nameCap = arr[Math.floor(Math.random() * arr.length)];
-  let finalName = nameCap.replace(/"/g, '');
-  name.innerHTML = "<strong>Name: </strong>" + finalName.toUpperCase();
-  console.log(finalName);
-}
-
-function displayJSON(d) {
-  $("textarea").html(d);
-}
-
-async function fetchSentiment(text) {
-  // data to send to the sentiment api
-  const formdata = new FormData();
-  formdata.append("key", "d465489ee701fc545ad8161d0c4e1137");
-  formdata.append("txt", text);
-  formdata.append("lang", "en");  // 2-letter code, like en es fr ...
-
-  const requestOptions = {
-    method: 'POST',
-    body: formdata,
-    redirect: 'follow'
-  };
-
-  var response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
-    .then(response =>
-      {return response.json();})
-
-    .then(body =>
-      {console.log(body);
-        console.log(body.score_tag);
-        var sentimentAnalysis = body.score_tag;
-        var condition = "";
-        if (sentimentAnalysis=='P') {
-          condition = happyemotions[randomhappy];
-          document.getElementById("condition").innerHTML = "More about <strong> " + condition + "</strong>";
-          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <strong>positive</strong> emotions";
-          document.getElementById("diagnosis").innerHTML = "Dr. Duck believes you are at risk of <strong>"  + condition + "</strong>";
-        }
-        else if (sentimentAnalysis=='N') {
-          condition = sademotions[randomhappy];
-          document.getElementById("condition").innerHTML = "Read More about  " + condition + ".";
-          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <strong>negative</strong> emotions";
-          document.getElementById("diagnosis").innerHTML = "Dr. Duck believes you are at risk of <strong>"  + sademotions[randomsad] + "</strong>";
-        }
-        else {
-          condition = neutralemotions[randomhappy];
-          document.getElementById("condition").innerHTML = "Read More about  " + condition + ".";
-          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <strong>neutral</strong> emotions";
-          document.getElementById("diagnosis").innerHTML = "Dr. Duck believes you are at risk of <strong>"  + neutralemotions[randomneutral] + "</strong>";
-        }
-      }
-    )
-    .catch(error => console.log('error', error));
-}
-
-function getDiagnosis(){
-  const happydiagnoses = ["Happy Hummer Syndrome", "Cheerful Chick Syndrome"];
-  const saddiagnoses = ["Angry Avian Disorder", "Inadequate Ibis Complex"];
-  const neudiagnoses = ["Indifferent Ibis Complex", "Mellow Mallard Syndrome"];
-
-  const randhap = Math.floor(Math.random() * happydiagnoses.length);
-  const randsad = Math.floor(Math.random() * saddiagnoses.length);
-  const randneu = Math.floor(Math.random() * neudiagnoses.length);
-  var sentimentAnalysis = Math.random(20);
-  document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
-
-  if (sentimentAnalysis>10) {
-    document.getElementById("diagnosis").innerHTML = "Dr. Duck has diagnosed you with <strong>"  + happydiagnoses[randhap] + "</strong>";
-  }
-  else if (sentimentAnalysis<10) {
-        document.getElementById("diagnosis").innerHTML = "Dr. Duck has diagnosed you with <strong>"  + saddiagnoses[randsad];
-  }
-  else {
-        document.getElementById("diagnosis").innerHTML = "Dr. Duck has diagnosed you with <strong>" + neudiagnoses[randneu];
-  }
-}
-
 function getInputValue() {
     //inputVal variables
     let inputVal = document.getElementById("inputVal").value;
@@ -135,6 +42,71 @@ function getInputValue() {
     }
 }
 
+function getNameAndDate() {
+  //Date variables
+  var date = document.getElementById('date');
+  let currentDate = new Date();
+  let cDay = currentDate.getDate();
+  let cMonth = currentDate.getMonth() + 1;
+  let cYear = currentDate.getFullYear();
+  date.innerHTML = "<strong>Date: </strong>" + cDay + "/" + cMonth + "/" + cYear;
+
+  //inputVal variables
+  let inputVal = document.getElementById("inputVal").value;
+  var value = JSON.stringify(inputVal);
+
+  //Name variables
+  let arr = value.split(' ');
+  var name = document.getElementById('name');
+  let nameCap = arr[Math.floor(Math.random() * arr.length)];
+  let finalName = nameCap.replace(/"/g, '');
+  name.innerHTML = "<strong>Name: </strong>" + finalName.toUpperCase();
+  console.log(finalName);
+}
+
+function getDiagnosis(){
+  alert("Sorry, the code for this website is experiencing an error. Please try again.");
+}
+
+async function fetchSentiment(text) {
+  // data to send to the sentiment api
+  const formdata = new FormData();
+  formdata.append("key", "d465489ee701fc545ad8161d0c4e1137");
+  formdata.append("txt", text);
+  formdata.append("lang", "en");  // 2-letter code, like en es fr ...
+
+  const requestOptions = {
+    method: 'POST',
+    body: formdata,
+    redirect: 'follow'
+  };
+
+  var response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+    .then(response =>
+      {return response.json();})
+
+    .then(body =>
+      {console.log(body);
+        console.log(body.score_tag);
+        var sentimentAnalysis = body.score_tag;
+        if (sentimentAnalysis=='P') {
+          const condition = happyemotions[randomhappy];
+          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>happy</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
+          document.getElementById("symptoms").innerHTML = "<ul><li>Excessive happiness</li><li>Tickled feathers</li><li>High Resiliancy</li></ul>";
+          // document.getElementById("treatment").innerHTML = "<a href='https://www.theonion.com/free-spirited-man-informed-it-time-to-grow-up-and-stop-1849518790'>Stop Being Happy</a><a href='https://thelawofattraction.com/how-to-be-unhappy/'>Guide to Unhapiness</a>";
+        } else if (sentimentAnalysis=='N') {
+          const condition = sademotions[randomsad];
+          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>negative</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
+          document.getElementById("symptoms").innerHTML = "<ul><li>Spiritless apathy</li><li>Passive indifference</li><li>Impartial detachment</li></ul>" ;
+        } else {
+          const condition = neutralemotions[randomneutral];
+          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>neutral</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
+          document.getElementById("symptoms").innerHTML = "<ul><li>Dispirited disdain</li><li>Unending drowsiness</li><li>Shiftless</li></ul>" ;
+        }
+      }
+    )
+    .catch(error => console.log('error', error));
+}
 /*--------------------MODAL SHIT---------------------------*/
 // Get the modal
 var modal = document.getElementById("myModal");
