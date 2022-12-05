@@ -1,6 +1,5 @@
 
-Algorithms from Facebook, Google, Tiktok, Twitter, etc., can learn a lot
-about who we are based on our online activity... they might even more
+Algorithms from Facebook, Google, Tiktok, Twitter, etc., can learn a lot about who we are based on our online activity... they might even more
 about your mental health and insecurities than your primary care clinition.
 
 
@@ -13,3 +12,8 @@ The code is a representation of a possible future for patient diagnosis
 in the healthcare industry: diagnoses based on user analytics.
 
 Although it is a very simplified mock-up
+
+As of 2022, data tracking has become a highly effective way to learn consumer habits and produce revenue. Algorithms from big tech companies such as Google, Facebook, and Microsoft are able to collect enough data about a single user to identify personal information, interests, and habits. So what if
+
+ rapidly advancing
+Imagine the future of medical This project simulates an online diagnostic survey in a simplified form.

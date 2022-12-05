@@ -11,9 +11,9 @@ document.links[current].className = 'current';
 //end button
 
 /*--------------------ARRAYS/VARIABLES---------------------------*/
-const happyemotions = ["happy hopper.","happy.","content clam.", "content."];
-const neutralemotions = ["ok.","fine.","alright."];
-const sademotions = ["angry avian syndrome.","an inadequate ibis complex.", "upset urchin.", "angry."];
+const happyemotions = ["Happy Hummer Syndrome.", "Cheerful Chick Syndrome."];
+const neutralemotions = ["Indifferent Ibis Complex.", "Mellow Mallard Syndrome."];
+const sademotions = ["Angry Avian Disorder.", "Inadequate Ibis Complex."];
 
 const randomhappy = Math.floor(Math.random() * happyemotions.length);
 const randomneutral = Math.floor(Math.random() * neutralemotions.length);
@@ -66,16 +66,24 @@ async function fetchSentiment(text) {
       {console.log(body);
         console.log(body.score_tag);
         var sentimentAnalysis = body.score_tag;
-        document.getElementById("info").innerHTML = "Content Moderator Score: " + sentimentAnalysis;
-
+        var condition = "";
         if (sentimentAnalysis=='P') {
-          document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling <strong>"  + happyemotions[randomhappy] + "</strong>";
+          condition = happyemotions[randomhappy];
+          document.getElementById("condition").innerHTML = "More about <strong> " + condition + "</strong>";
+          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <strong>positive</strong> emotions";
+          document.getElementById("diagnosis").innerHTML = "Dr. Duck believes you are at risk of <strong>"  + condition + "</strong>";
         }
         else if (sentimentAnalysis=='N') {
-              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + sademotions[randomsad];
+          condition = sademotions[randomhappy];
+          document.getElementById("condition").innerHTML = "Read More about  " + condition + ".";
+          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <strong>negative</strong> emotions";
+          document.getElementById("diagnosis").innerHTML = "Dr. Duck believes you are at risk of <strong>"  + sademotions[randomsad] + "</strong>";
         }
         else {
-              document.getElementById("diagnosis").innerHTML = "Dr. Duck has concluded that you are feeling "  + neutralemotions[randomneutral];
+          condition = neutralemotions[randomhappy];
+          document.getElementById("condition").innerHTML = "Read More about  " + condition + ".";
+          document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <strong>neutral</strong> emotions";
+          document.getElementById("diagnosis").innerHTML = "Dr. Duck believes you are at risk of <strong>"  + neutralemotions[randomneutral] + "</strong>";
         }
       }
     )
@@ -108,22 +116,21 @@ function getInputValue() {
     //inputVal variables
     let inputVal = document.getElementById("inputVal").value;
     var value = JSON.stringify(inputVal);
-    if (value=="") {
-      alert("please insert text");
-      return;
-    }
 
-    else {
+
+    if(document.getElementById("inputVal").value.trim() == ''){
+        alert("Please enter text in the form.");
+        document.querySelector('#inputVal').classList.add('border');
+    } else {
       try {
-        fetchSentiment(value);
+          modal.style.display = "block";
+          fetchSentiment(value);
       }
-
       catch ( e ) {
-        getDiagnosis();
+          getDiagnosis();
       }
-
       finally {
-        getNameAndDate();
+          getNameAndDate();
       }
     }
 }
@@ -138,15 +145,10 @@ var btn = document.getElementById("button");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal
-function display() {
-  modal.style.display = "block";
-}
-
 // When the user clicks on <span> (x), close the modal
-function exit() {
+span.onclick = function() {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -157,48 +159,3 @@ window.onclick = function(event) {
 /*end modal shit*/
 
 /*--------------------NAV BAR-------------------------*/
-window.addEventListener('DOMContentLoaded', event => {
-
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink');
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink');
-        }
-
-    };
-
-    // Shrink the navbar
-    navbarShrink();
-
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 72,
-        });
-    }
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
-
-});

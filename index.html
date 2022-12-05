@@ -17,26 +17,25 @@
   <title>dig245-final</title>
 </head>
 
-
 <body>
-	<!-- Navigation-->
-  <nav style="background-color: #FF8D4E !important;"class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+
+  <!-- Navigation-->
+  <nav style="background-color: #4B4B4B !important; height:4rem !important;" class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <div type="button" class="navbar-brand" ><a href="#home">DIAGNOSIS</a></div>
-      <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #FF8D4E !important;">
-        	Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div type="button" class="navbar-brand"><a href="#home">DIAGNOSIS</a>
+      </div>
+
+      <div class="collapse navbar-collapse" style="padding-bottom: .5rem !important; margin-top:0rem !important;" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+          <li class="nav-item mx-0 mx-lg-1 centeredCont">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
+          </li>
         </ul>
       </div>
-    </div>
   </nav>
 
   <!--Splash-->
-  <div class="container-fluid accentCont centeredCont" id="home">
+  <div class="container-fluid accentCont centeredCont" id="home" style="margin-top: 4rem !important;">
     <div class="container">
       <div class="row centeredCont">
         <img class="duckLogo" src="assets/img/DrDuck.svg" alt="Dr. Duck Logo">
@@ -44,12 +43,16 @@
       <div class="row">
         <h2 class="whiteText"> Welcome to the clinic!</h2>
       </div>
+
+      <p class="whiteText">Dr. Duck will need to collect a sample to complete your diagnosis. You may follow the instructions below or type any text into the following text area.</p>
+
+      <button id="down"><a href="#diagnosis-section">Let's Begin!</a></button>
     </div>
   </div>
 
   <!--Main Section-->
-  <div class="container-fluid whiteCont" id="diagnosis-section">
-
+  <div id="diagnosis-section" class="accentCont"></div>
+  <section class="container-fluid whiteCont">
     <!--Header-->
     <div class="row">
       <h1 class="accentText">Instructions</h1>
@@ -58,11 +61,11 @@
     <!--Instructions-->
     <div class="row">
       <div class="col-2"></div>
-      <div class="col left">
-        <ol>
-          <li>Navigate to one of your social media home/'for you' pages.</li><br>
-          <li>Select all text (Cmd + A), then navigate back to the clinic.</li><br>
-          <li>Paste the text in the text box below, then click the "submit" button.</li>
+      <div class="col">
+        <ol class="left">
+          <li><p>Navigate to one of your social media home/'for you' pages.</p></li><br>
+          <li><p>Select all text (Cmd + A), then navigate back to the clinic.</p></li><br>
+          <li><p>Paste the text in the text box below, then click the "submit" button.</p></li>
         </ol>
       </div>
       <div class="col-2"></div>
@@ -71,192 +74,96 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col" style="margin-bottom: 2rem;">
-        <textarea class="centeredCont" type="textarea" rows="8" placeholder="paste text here" id="inputVal"></textarea><br>
+        <textarea class="centeredCont" type="textarea" rows="8" placeholder="paste text here:" id="inputVal"></textarea><br>
         <button type="button" class="btn" id="button" onclick="getInputValue()"> Diagnose Me! </button>
       </div>
       <div class="col-2"></div>
     </div>
 
-  </div>
-  <!-- <form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom01">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom02">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustomUsername">Username</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroupPrepend">@</span>
-        </div>
-        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please choose a username.
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom03">City</label>
-      <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom04">State</label>
-      <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
-      <div class="invalid-feedback">
-        Please provide a valid state.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom05">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
-      <div class="invalid-feedback">
-        Please provide a valid zip.
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-        Agree to terms and conditions
-      </label>
-      <div class="invalid-feedback">
-        You must agree before submitting.
-      </div>
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
-</form>
+  </section>
 
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script> -->
-  <!--PDF Report area *ejs or lookup how to embed html file-->
+  <!--end diagnosis-->
 
   <!-- The Modal -->
-  <div id="myModal" class="modal">
+  <div id="myModal" class="modal"> -->
 
     <!-- Modal content -->
     <div class="modal-content" id="report">
       <span class="close" onclick="exit();">&times;</span>
 
       <div class="row">
+        <!--name/date-->
         <div class="col-12 left">
-          <p id="date"><strong>Date:</strong> __/__/__</p>
-          <p id="name"><strong>Name: </strong></p>
+          <p id="date"></p>
+          <p id="name"></p>
+        </div>
+        <!--report heading-->
+        <h3>Report Summary</h3>
+      </div>
+      <div class="container" style="padding-left: 2rem !important; padding-right: 2rem;">
+        <div class="row">
+          <p id="info"></p>
+          <p id="diagnosis"></p>
+        </div>
+        <!--end moderator score-->
+        <div class="container" style="justify-content: center !important; width:70% !important;">
+          <div class="accordion" id="accordionExample">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button id="condition" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong></strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="centeredCont" style="padding-top: 2rem !important;">
+            <button style="" onClick="window.location.reload();">New Diagnosis</button>
+          </div>
         </div>
       </div>
-      <!--end name/date-->
-
-      <div class="row">
-        <h3> Report Summary</h3>
-      </div>
-      <!--end heading-->
-
-      <div class="row">
-        <p id="info" class="left">Content Moderator Score: </p>
-      </div>
-      <!--end moderator score-->
-
-      <div class="row">
-        <p id="diagnosis" class=""></p>
-      </div>
-      <!--end diagnosis-->
-
     </div>
   </div>
-  <!--
-      <div class="accordion" id="accordionExample">
 
-				<div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Quierky Quack Disorder (QQD) : High Risk
-              Happy Hen Disease (HHD) : High Risk
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>You are at risk</strong>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Mediocre Mallard Syndrome (MMD): High Risk
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>Symptoms:</strong>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Pitiable Pheasant Syndrome (UDS) : High Risk
-              Forlorn fowl
-              Dejected
-              Dismal
-              Woeful
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>Symptoms:</strong>
-            </div>
-          </div>
-        </div>
+<!--- ABOUT-------------------------------->
+  <section id="about">
+    <div class="container-fluid accentCont">
+      <div style="padding-left: 15%; padding-right: 15%; padding-bottom:6rem;">
+        <h1>About</h1><br>
+        <p><strong>Background</strong></p>
+        <p>While many studies have been done to correlate different kinds of media exposure to different behavior and mental health issues (i.e. violent video games have been correlated with higher levels of aggression in children, social media use has been correlated with lower self-esteem in females), very doctors I know have asked about my online behavior, and few online behavioral and mental health diagnostic surveys acknowledge the correlations through their questions.
+        I believe that one of the main reasons it is hard to discuss internet behavior between patients and primary care clinicians is due to the large range of activities that can be done online that havent been studied, categorized, or correlated with mental health issues.
+        When we began studying issues with user data tracking in class, I started to think about how user data could potentially be used to benefit users rather than exploit them if it is used to contextualize certain diagnoses.
+        </p>
+        <p><strong>What It Is, And How It Works</strong></p>
+
+        <p>This project simulates a mental health diagnostic survey that takes user data and produces a profile with potential diagnoses. The code for this project simulates the extraction of user data through patient-input information (copying and pasting or typing), runs the text through an external text sentiment analysis API to retrieve the positive/negative connotation of the text, then extracts a random diagnosis from one of three sets of fake diagnoses.
+        </p>
+        <p><strong>Purpose</strong></p>
+        <p>While this project is partially intended to reveal the potential benefits of using user data for diagnoses, the random diagnosis is supposed to create confusion for any user that gets a slightly inaccurate diagnosis.
+        </p><br>
+        <p>Zoe Ren Sunday, December 4th, 2022</p>
       </div>
--->
-
-	<footer id="about" class="centeredCont">
-    <div class="container">
-      <h3 class="whiteText">About this project</h3>
-      <embed type="text/plain" href="assets/txt/about.txt"  width="100%" height="200">
-      <object data="assets/txt/about.txt" type="text/plain">
-        <a class="whiteText" href="assets/txt/about.txt">No Support?</a>
-      </object>
     </div>
+  </section>
 
-	</footer>
-
-
+  <!--- FOOTER-------------------------------->
+  <footer>
+        Critical Web Design/DIG 245 Final Project | Created by Zoe Ren | Hosted by Github Pages
+          &#x2022;
+          <a href="https://www.linkedin.com/in/zoe-ren-41aa76208/">
+          <img src="assets/img/linkedin.png" class="socials"></img>
+          </a>
+          &#x2022;
+          <a href="https://portfolio.zoeren.dcreate.domains/">
+          <img src="assets/img/tempprofile.png" class="socials">
+          </a>
+  </footer>
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Boostrap JS -->
