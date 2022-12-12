@@ -46,11 +46,23 @@
         <img class="duckLogo" src="assets/img/DrDuck.svg" alt="Dr. Duck Logo">
       </div>
       <div class="row">
-        <h2 class="whiteText"> Welcome to the clinic!</h2>
+        <div class="col-2">
+        </div>
+        <div class="col">
+          <h2 class="whiteText"> Welcome to the clinic!</h2>
+        </div>
+        <div class="col-2">
+        </div>
       </div>
-
-      <p class="whiteText">Dr. Duck will need to collect a sample to complete your diagnosis. You may follow the instructions below or type any text into the text area below.</p>
-
+      <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col">
+          <p style="text-indent: 40px;" class="whiteText left">Dr. Duck will need to collect a sample to complete your diagnosis. You may follow the instructions below or type any text into the text area below.</p>
+        </div>
+        <div class="col-2">
+        </div>
+      </div>
       <button id="down"><a href="#diagnosis-section">Let's Begin!</a></button>
     </div>
   </div>
@@ -67,6 +79,7 @@
     <div class="row">
       <h1 class="accentText">Instructions</h1>
     </div>
+
 
     <!--Instructions-->
     <div class="row">
@@ -105,7 +118,7 @@
 
   <!-- The Modal -->
   <div id="myModal" class="modal" style="z-index: 10 !important;">
-  
+
     <!-- Modal content -->
     <div class="modal-content" id="report">
 
@@ -150,6 +163,7 @@
           </div>
         </div>
         <!--end moderator score-->
+        <hr>
         <div class="row">
           <div class="col centeredCont" style="padding-top: 2rem !important;">
             <button style="" onClick="window.location.reload();">New Diagnosis</button>
@@ -169,7 +183,7 @@
   <section>
     <div class="container-fluid accentCont">
       <div style="padding-left: 15%; padding-right: 15%;">
-        <h1>About</h1><br>
+        <h1 class="whiteText">About</h1><br>
         <div class="container whiteCont">
           <p><strong>Background</strong></p>
           <p>While many studies have been done to correlate different kinds of media exposure to different behavior and mental health issues (i.e. violent video games have been correlated with higher levels of aggression in children, social media use has been correlated with lower self-esteem in females), very doctors I know have asked about my online behavior, and few online behavioral and mental health diagnostic surveys acknowledge the correlations through their questions.

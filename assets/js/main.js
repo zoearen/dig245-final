@@ -2,6 +2,16 @@
 $(window).on('load', function(){
     $('html, body').scrollTop(0);
 });
+
+$('#treatment1').click(function(e) {
+  e.preventDefault();
+});
+$('#treatment2').click(function(e) {
+  e.preventDefault();
+});
+$('#treatment3').click(function(e) {
+  e.preventDefault();
+});
 /*--------------------Button Function---------------------------*/
 var current = 0;
 for (var i = 0; i < document.links.length; i++) {
