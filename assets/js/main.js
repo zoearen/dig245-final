@@ -1,5 +1,7 @@
 /* javascript */
-
+$(window).on('load', function(){
+    $('html, body').scrollTop(0);
+});
 /*--------------------Button Function---------------------------*/
 var current = 0;
 for (var i = 0; i < document.links.length; i++) {
@@ -93,20 +95,30 @@ async function fetchSentiment(text) {
           const condition = happyemotions[randomhappy];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>happy</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
           document.getElementById("symptoms").innerHTML = "<ul><li>Excessive happiness</li><li>Tickled feathers</li><li>High Resiliancy</li></ul>";
-          // document.getElementById("treatment").innerHTML = "<a href='https://www.theonion.com/free-spirited-man-informed-it-time-to-grow-up-and-stop-1849518790'>Stop Being Happy</a><a href='https://thelawofattraction.com/how-to-be-unhappy/'>Guide to Unhapiness</a>";
+          document.getElementById("treatment1").innerHTML = "Build Up Negative Mindsets";
+          document.getElementById("treatment2").innerHTML = "Share Your Happiness";
+          document.getElementById("treatment3").innerHTML = "Change Your Identity";
         } else if (sentimentAnalysis=='N') {
           const condition = sademotions[randomsad];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>negative</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
-          document.getElementById("symptoms").innerHTML = "<ul><li>Lack of emotions</li><li>Unending drowsiness</li><li>Low self-esteem</li></ul>" ;
+          document.getElementById("symptoms").innerHTML = "<ul><li>Lack of emotions</li><li>Unending drowsiness</li><li>Low self-esteem</li></ul>";
+          document.getElementById("treatment1").innerHTML = "Self-Care Guide";
+          document.getElementById("treatment2").innerHTML = "Positive Mindsets";
+          document.getElementById("treatment2").href = "https://www.sunnyskyz.com/uploads/2017/03/f5yvc-wholesome-comics-15.png";
+          document.getElementById("treatment3").innerHTML = "Renvision Yourself";
         } else {
           const condition = neutralemotions[randomneutral];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>neutral</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
-          document.getElementById("symptoms").innerHTML = "<ul><li>Spiritless apathy</li><li>Passive indifference</li><li>Impartial detachment</li></ul>" ;
+          document.getElementById("symptoms").innerHTML = "<ul><li>Spiritless apathy</li><li>Passive indifference</li><li>Impartial detachment</li></ul>";
+          document.getElementById("treatment1").innerHTML = "Be Rebellious";
+          document.getElementById("treatment2").innerHTML = "Don't Be a Chickadee";
+          document.getElementById("treatment3").innerHTML = "Try Something New";
         }
       }
     )
     .catch(error => console.log('error', error));
 }
+
 /*--------------------MODAL SHIT---------------------------*/
 // Get the modal
 var modal = document.getElementById("myModal");

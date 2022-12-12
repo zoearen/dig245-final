@@ -104,6 +104,10 @@ a:active {color: white !important;}
 .spacer {height: 3rem;}
 .accent {background-color: #FF8D4E !important;}
 .white {background-color: white !important;}
+
+.treatment {background-color: grey !important; color: white !important;}
+.treatment:hover {background-color: #FF8D4E !important; color: white !important;}
+
 /*ids------------------------------------------------------------------*/
 #iconBox {
   width:5rem;
@@ -178,7 +182,7 @@ button:hover {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 2 !important; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -200,10 +204,8 @@ button:hover {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  background-color: #aaaaaa !important;
   float: right;
-  font-size: 28px;
-  font-weight: bold;
 }
 
 .close:hover,
