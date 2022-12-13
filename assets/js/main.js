@@ -12,6 +12,7 @@ $('#treatment2').click(function(e) {
 $('#treatment3').click(function(e) {
   e.preventDefault();
 });
+
 /*--------------------Button Function---------------------------*/
 var current = 0;
 for (var i = 0; i < document.links.length; i++) {
@@ -68,12 +69,12 @@ function getNameAndDate() {
   var value = JSON.stringify(inputVal);
 
   //Name variables
-  let arr = value.split(' ');
+  // let arr = value.split(' ');
   var name = document.getElementById('name');
-  let nameCap = arr[Math.floor(Math.random() * arr.length)];
-  let finalName = nameCap.replace(/"/g, '');
-  name.innerHTML = "<strong>Name: </strong>" + finalName.toUpperCase();
-  console.log(finalName);
+  // let nameCap = arr[Math.floor(Math.random() * arr.length)];
+  // let finalName = nameCap.replace(/"/g, '');
+  let patient = Math.floor((Math.random() * 9) + 1);
+  name.innerHTML = "<strong>ID: </strong> A0" + patient + "F" + patient;
 }
 
 function getDiagnosis(){
@@ -112,7 +113,7 @@ async function fetchSentiment(text) {
           const condition = sademotions[randomsad];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>negative</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
           document.getElementById("symptoms").innerHTML = "<ul><li>Lack of emotions</li><li>Unending drowsiness</li><li>Low self-esteem</li></ul>";
-          document.getElementById("treatment1").innerHTML = "Self-Care Guide";
+          document.getElementById("treatment1").innerHTML = "A Self-Care Guide";
           document.getElementById("treatment2").innerHTML = "Positive Mindsets";
           document.getElementById("treatment2").href = "https://www.sunnyskyz.com/uploads/2017/03/f5yvc-wholesome-comics-15.png";
           document.getElementById("treatment3").innerHTML = "Renvision Yourself";
@@ -120,8 +121,8 @@ async function fetchSentiment(text) {
           const condition = neutralemotions[randomneutral];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>neutral</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
           document.getElementById("symptoms").innerHTML = "<ul><li>Spiritless apathy</li><li>Passive indifference</li><li>Impartial detachment</li></ul>";
-          document.getElementById("treatment1").innerHTML = "Be Rebellious";
-          document.getElementById("treatment2").innerHTML = "Don't Be a Chickadee";
+          document.getElementById("treatment1").innerHTML = "A Break from Neutrality";
+          document.getElementById("treatment2").innerHTML = "Noncholance At Work";
           document.getElementById("treatment3").innerHTML = "Try Something New";
         }
       }

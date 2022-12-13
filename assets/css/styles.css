@@ -1,4 +1,28 @@
 /* css */
+/*----------------------------SPLASH--------------------------------*/
+#home {padding: 5rem;}
+/* Logo */
+.duckLogo {max-width: 8rem; max-height: 8rem;}
+/* Splash Button */
+#down {margin-top: 2rem;width: 100% !important;height: 2.5rem !important;border-radius: 2rem !important;border: .2rem solid white !important;}
+@media (min-width: 300px) {#down {width: 10rem !important; height: 2.5rem !important;}}
+#down a:hover {color: #FF8D4E !important;}
+
+/*----------------------------MAIN--------------------------------*/
+#main {}
+
+#container {background-color: ;width: 80%; max-width: 900px;align-items: center; justify-content: center;}
+
+/*----------------------------ABOUT--------------------------------*/
+
+/*----------------------------FOOTER--------------------------------*/
+footer {
+  color: white !important;
+  background-color: #4B4B4B;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  position: sticky;
+}
 /*elements------------------------------------------------------------*/
 body {
   background-color: white !important;
@@ -7,24 +31,56 @@ body {
   color: black !important;
   text-align: center !important;
   justify-content: space-evenly !important;
-  font-size: 12px !important;}
+}
 
-h1 {font-weight: 500 !important; font-size: 32px !important;}
-h2 {font-weight: 300 !important; font-size: 24px !important;}
-h3 {font-weight: 500 !important; font-size: 16px !important;}
-p {font-size: 12px !important;}
+
 textarea {
   width: 100%;
   color: black;
   justify-content: center;
   text-align: center;
   padding-top: .2rem;}
+
 a {
   text-decoration: none !important;
   color: white !important;
-  padding-top: .5rem !important;
-  padding-bottom: .5rem !important;}
+  /* padding-top: .5rem !important;
+  padding-bottom: .5rem !important; */
+}
 a:active {color: white !important;}
+
+.parent{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.child {
+  flex: 50%;
+}
+@media (max-width: 800px) {
+  .parent {
+    flex-direction: column;
+  }
+}
+
+.modal-parent{
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
+.modal-child {
+  flex: ;
+}
+@media (max-width: 400px) {
+  .modal-parent {
+    flex-direction: column;gap: 0rem !important;
+  }
+
+}
+
+#treatment1 #treatment2 #treatment3 {
+  font-size: 6px !important;
+}
 /*classes-------------------------------------------------------------*/
 /* text adjustments */
 .blackText {
@@ -42,6 +98,7 @@ a:active {color: white !important;}
 .right {
   text-align: right;
 }
+
 /* containers */
 .accentCont {
   background-color:  #FF8D4E !important;
@@ -55,10 +112,7 @@ a:active {color: white !important;}
   padding: 1.2rem;
 }
 /* SVGs */
-.duckLogo {
-  max-width: 10rem;
-  max-height: 10rem;
-}
+
 .icon {
   position: relative;
   max-width: 100%;
@@ -72,10 +126,6 @@ a:active {color: white !important;}
 
 /*containers*/
 
-.row{
-  margin-bottom: 1.5rem;
-  margin-top: ;
-}
 .box {
   width: 100%;
   height: 100%;
@@ -106,8 +156,16 @@ a:active {color: white !important;}
 .accent {background-color: #FF8D4E !important;}
 .white {background-color: white !important;}
 
-.treatment {background-color: grey !important; color: white !important;}
-.treatment:hover {background-color: #FF8D4E !important; color: white !important;}
+.treatment {
+  background-color: lightgrey !important;
+  color: white !important;
+  border-radius: .25rem;
+  padding: .5rem;
+}
+
+.treatment:hover {
+  background-color: #FF8D4E !important;
+  color: white !important;}
 
 /*ids------------------------------------------------------------------*/
 #iconBox {
@@ -128,16 +186,8 @@ a:active {color: white !important;}
   padding: 2rem;
   justify-content: center !important;
 }
-#down {
-  margin-top: 2rem;
-  width: 12rem !important;
-  height: 4rem !important;
-  border-radius: 2rem !important;
-  border: .2rem solid white !important;
-}
-#down a:hover {
-  color: #FF8D4E !important;
-}
+
+
 .reportButton {
   border-radius: .01rem !important;
   width: 50% !important;
@@ -149,7 +199,7 @@ a:active {color: white !important;}
 }
 
 /*button shit*/
-button {
+.button {
   border-radius: .01rem !important;
   width: 100% !important;
   height: 3rem !important;
@@ -160,7 +210,7 @@ button {
   /*transition:800ms ease all !important;*/
 }
 
-button:hover {
+.button:hover {
   border-radius: .01rem !important;
   width: 100% !important;
   height: 3rem !important;
@@ -169,7 +219,7 @@ button:hover {
   background-color: white !important;
 }
 
-:button {
+:.button {
   border-radius: .01rem !important;
   width: 100% !important;
   height: 3rem !important;
@@ -206,105 +256,158 @@ button:hover {
 /* The Close Button */
 .close {
   background-color: #aaaaaa !important;
-  float: right;
+  border-radius: .01rem !important;
+  width: 100% !important;
+  height: 3rem !important;
+  color: white !important;
+  border: none !important;
+  cursor:pointer !important;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
+/*-------------------------NAVIGATION----------------------------------*/
 /*mainNav*/
-#mainNav .navbar-brand {
+nav {
+  background-color: #4B4B4B !important;
+  height:6rem !important;
+  z-index: 0 !important;
+}
+#navbarNav {
+  padding-bottom: .5rem !important;
+  margin-top:0rem !important;
+}
+
+
+.navbar-brand {color: #fff;}
+
+.navbar-nav {margin-top: 1rem;}
+
+.navbar-nav li.nav-item a.nav-link {
   color: #fff;
 }
-#mainNav .navbar-nav {
-  margin-top: 1rem;
-}
-#mainNav .navbar-nav li.nav-item a.nav-link {
-  color: #fff;
-}
-#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+
+.navbar-nav li.nav-item a.nav-link:hover {
   color: #4B4B4B !important;
   background-color: white !important;
 }
-#mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+
+.navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff !important;
   background-color: white !important;
 }
-#mainNav .navbar-nav li.nav-item a.nav-link.active {
+
+.navbar-nav li.nav-item a.nav-link.active {
   color: #4B4B4B !important;
   background-color: white !important;
 }
 
-/*-------------------------NAVIGATION----------------------------------*/
+
+
 /*-------------------------HEADER/SPLASH----------------------------------*/
 /*-------------------------MAIN CONTENT----------------------------------*/
 /*-------------------------FOOTER----------------------------------*/
-footer {
-  color: white !important;
-  background-color: #4B4B4B;
-  justify-content: center;
-  text-align: center;
-  font-size: 10px;
-  padding: 2rem;
-}
 
-#footer {
-  width: 100%;
-}
+
 /*-------------------------RESPONSIVE LAYOUT----------------------------------*/
 
 /* sm */
 @media (min-width: 576px) {
-  body {font-size: 16px !important;}
-  h1 {font-size: 32px !important;}
-  h2 {font-size: 24px !important;}
-  h3 {font-size: 20px !important;}
-  p {font-size: 16px !important;}
-  footer {font-size: 12px !important;}
   .socials {
     width: 15px !important;
     height: 15px !important;
   }
+  .row {
+    margin-bottom: .25rem !important;
+    margin-top: .25rem !important;
+  }
+  #down {
+    margin-top: 2rem;
+    width: 12rem !important;
+    height: 3rem !important;
+    border-radius: 2rem !important;
+    border: .2rem solid white !important;
+  }
+  .duckLogo {
+    max-width: 8rem;
+    max-height: 8rem;
+  }
+
 }
 
 /* med */
 @media (min-width: 768px) {
-  body {font-size: 18px !important;}
-  h1 {font-size: 44px !important;}
-  h2 {font-size: 32px !important;}
-  h3 {font-size: 24px !important;}
-  p {font-size: 18px !important;}
-  footer {font-size: 10px !important;}
   .socials {
     width: 20px !important;
     height: 20px !important;
+  }
+  .row {
+    margin-bottom: .15rem !important;
+    margin-top: .15rem !important;
+  }
+  #home {
+    padding: 7rem 12rem 7rem 12rem !important;
+  }
+  #down {
+    width: 12rem !important;
+    height: 4rem !important;
+  }
+  .duckLogo {
+    max-width: 10rem;
+    max-height: 10rem;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  body {font-size: 18px !important;}
-  h1 {font-size: 44px !important;}
-  h2 {font-size: 32px !important;}
-  h3 {font-size: 24px !important;}
-  p {font-size: 18px !important;}
-  footer {font-size: 14px !important;}
   .socials {
     width: 30px !important;
-    height: 30px !important;}}
+    height: 30px !important;
+  }
+  .row {
+    margin-bottom: .75rem !important;
+    margin-top: .75rem !important;
+  }
+  #home {
+    padding: 8rem 15rem 8rem 15rem !important;
+  }
+  #down {
+    width: 16rem !important;
+    height: 4rem !important;
+  }
+  .duckLogo {
+    max-width: 12rem;
+    max-height: 12rem;
+  }
+}
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  body {font-size: 22px !important;}
-  h1 {font-size: 48px !important;}
-  h2 {font-size: 36px !important;}
-  h3 {font-size: 28px !important;}
-  p {font-size: 22px !important;}
-  footer {font-size: 16px !important;}
   .socials {
     width: 35px !important;
-    height: 35px !important;}}
+    height: 35px !important;
+  }
+  .row {
+    margin-bottom: .75rem !important;
+    margin-top: .75rem !important;
+  }
+  #home {
+    padding: 8rem 15rem 8rem 15rem !important;
+  }
+  #down {
+    width: 18rem !important;
+    height: 4rem !important;
+  }
+  .duckLogo {
+    max-width: 12rem;
+    max-height: 12rem;
+  }
+}
+
+.indent {
+  text-indent: 0px;
+}

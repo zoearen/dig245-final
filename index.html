@@ -20,12 +20,12 @@
 <body>
 
   <!-- Navigation-->
-  <nav style="background-color: #4B4B4B !important; height:6rem !important; z-index: 0 !important;" class="navbar navbar-expand text-uppercase fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-sm text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <div type="button" class="navbar-brand"><a href="#home">DIAGNOSIS</a>
+      <div type="button" class="navbar-brand"><a class="nav-link" href="#top">DIAGNOSIS</a>
       </div>
 
-      <div class="collapse navbar-collapse" style="padding-bottom: .5rem !important; margin-top:0rem !important;" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item mx-0 mx-lg-1 centeredCont">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
@@ -34,80 +34,90 @@
       </div>
   </nav>
 
-  <!--Spacer-->
-  <div class="accent spacer" id="home"></div>
-  <div class="accent spacer"></div>
-  <div class="accent spacer"></div>
-
   <!--Splash-->
-  <div class="container-fluid accentCont centeredCont">
-    <div class="container">
+  <div id="top" class="accent spacer"></div>
+  <div id="home" class="container-fluid accentCont">
       <div class="row centeredCont">
         <img class="duckLogo" src="assets/img/DrDuck.svg" alt="Dr. Duck Logo">
-      </div>
-      <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col">
-          <h2 class="whiteText"> Welcome to the clinic!</h2>
-        </div>
-        <div class="col-2">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col">
-          <p style="text-indent: 40px;" class="whiteText left">Dr. Duck will need to collect a sample to complete your diagnosis. You may follow the instructions below or type any text into the text area below.</p>
-        </div>
-        <div class="col-2">
-        </div>
-      </div>
-      <button id="down"><a href="#diagnosis-section">Let's Begin!</a></button>
-    </div>
+      </div><br>
+
+      <h2 class="whiteText"> Welcome to the clinic!</h2><br>
+      <p class="whiteText indent">
+        Dr. Duck will need to collect a sample to complete your diagnosis.
+      </p>
+      <button class="button" id="down"><a href="#diagnosis-section">Let's Begin!</a></button>
   </div>
 
   <!--Spacer-->
-  <div class="accent spacer"></div>
-  <div class="accent spacer"></div>
+
   <div id="diagnosis-section" class="white spacer"></div>
   <div class="white spacer"></div>
 
   <!--Main Section-->
   <section class="container-fluid whiteCont">
-    <!--Header-->
-    <div class="row">
-      <h1 class="accentText">Instructions</h1>
+    <div class="centeredCont">
+    <div id="container">
+      <!--Header-->
+      <div class="row">
+        <h1 class="accentText">Instructions</h1>
+      </div>
+      <!--Icons-->
+      <div>
+        <a href='http://www.facebook.com/login.php'><img src="assets/img/facebook.png" class="socials"></a>
+        <a href='https://instagram.com/accounts/login/'><img src="assets/img/instagram.png" class="socials"></a>
+        <a href='https://twitter.com/login'><img src="assets/img/Twitter.png" class="socials"></a>
+        <a href='https://www.reddit.com/login'><img src="assets/img/reddit.png" class="socials"></a>
+      </div><br>
+      <!--Instructions-->
+      <ol class="left">
+        <li class=""><p><strong></strong> Click on one of the icons, or navigate to a social media home page.</p></li><br>
+        <li class=""><p><strong></strong> Select all text (Cmd + A), then navigate back to the clinic.</p></li><br>
+        <li class=""><p><strong></strong> Paste the text in the text box below, then click the "Submit" button below.</p></li>
+      </ol><br>
+      <!--Submit Btn-->
+      <div class="col" style="margin-bottom: 2rem;">
+        <textarea class="centeredCont" type="textarea" rows="4" placeholder="paste text here:" id="inputVal"></textarea><br>
+        <button type="button" class="btn button" id="button" onclick="getInputValue()"> Submit </button>
+      </div>
+
     </div>
-
-
+  </div>
+    <!--Header-->
+    <!-- <div class="row">
+      <h1 class="accentText">Instructions</h1>
+    </div> -->
     <!--Instructions-->
-    <div class="row">
-      <div class="col-2"></div>
+    <!-- <div class="row" style="padding-right: 2rem; padding-left: 2rem;">
       <div class="col">
         <div style="justify-items: center !important;">
           <a href='http://www.facebook.com/login.php'><img src="assets/img/facebook.png" class="socials"></a>
           <a href='https://instagram.com/accounts/login/'><img src="assets/img/instagram.png" class="socials"></a>
           <a href='https://twitter.com/login'><img src="assets/img/Twitter.png" class="socials"></a>
           <a href='https://www.reddit.com/login'><img src="assets/img/reddit.png" class="socials"></a>
-        </div><br>
-        <ol class="left">
-          <li><p>Click on one of the icons, or navigate to a social media home page.</p></li><br>
-          <li><p>Select all text (Cmd + A), then navigate back to the clinic.</p></li><br>
-          <li><p>Paste the text in the text box below, then click the "Submit" button below.</p></li>
+        </div><br> -->
+        <!-- <div class="left modal-parent">
+          <div class="modal-child"><p><strong>1.</strong> Click on one of the icons, or navigate to a social media home page.</p></div><br>
+          <div class="modal-child"><p><strong>2.</strong> Select all text (Cmd + A), then navigate back to the clinic.</p></div><br>
+          <div class="modal-child"><p><strong>3.</strong> Paste the text in the text box below, then click the "Submit" button below.</p></div>
+        </div> -->
+        <!-- <div class="centeredCont" >
+        <ol class="left" style="max-width: 40rem;">
+          <li class=""><p><strong></strong> Click on one of the icons, or navigate to a social media home page.</p></li><br>
+          <li class=""><p><strong></strong> Select all text (Cmd + A), then navigate back to the clinic.</p></li><br>
+          <li class=""><p><strong></strong> Paste the text in the text box below, then click the "Submit" button below.</p></li>
         </ol>
       </div>
-      <div class="col-2"></div>
-    </div>
+      </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-2"></div>
       <div class="col" style="margin-bottom: 2rem;">
         <textarea class="centeredCont" type="textarea" rows="4" placeholder="paste text here:" id="inputVal"></textarea><br>
-        <button type="button" class="btn" id="button" onclick="getInputValue()"> Submit </button>
+        <button type="button" class="btn button" id="button" onclick="getInputValue()"> Submit </button>
       </div>
       <div class="col-2"></div>
-    </div>
+    </div> -->
 
   </section>
   <!--end diagnosis-->
@@ -145,8 +155,21 @@
           </div>
         </div>
 
-        <div class="container" style="padding-left: 10%; padding-right: 10%;">
-          <div class="row">
+        <div class="container">
+          <!-- <p>Suggested Resources:</p>
+          <div class="modal-parent justify-content-center">
+            <div class="modal-child treatment centeredCont">
+              <a id="treatment1" href=""></a>
+            </div>
+            <div class="modal-child treatment centeredCont">
+              <a id="treatment2" href=""></a>
+            </div>
+            <div class="modal-child treatment centeredCont">
+              <a id="treatment3" href=""></a>
+            </div>
+          </div> -->
+
+          <!-- <div class="row">
             <p>Suggested Action Plan Resources</p>
             <div class="col">
               <div class="treatment" >
@@ -160,16 +183,16 @@
               <div class="treatment">
                 <a id="treatment3" href=""></a></div>
             </div>
-          </div>
+          </div> -->
         </div>
         <!--end moderator score-->
         <hr>
         <div class="row">
           <div class="col centeredCont" style="padding-top: 2rem !important;">
-            <button style="" onClick="window.location.reload();">New Diagnosis</button>
+            <button class="button" style="" onClick="window.location.reload();">New Diagnosis</button>
           </div>
           <div class="col centeredCont" style="padding-top: 2rem !important;">
-            <button class="close" onclick="exit();">&times; Exit Report</button>
+            <button class="button close" onclick="exit();">&times; Exit Report</button>
           </div>
         </div>
 
@@ -178,28 +201,70 @@
   </div>
 
   <div id="about" class="accent spacer"></div>
-  <div class="accent spacer"></div>
   <!--- ABOUT-------------------------------->
   <section>
-    <div class="container-fluid accentCont">
-      <div style="padding-left: 15%; padding-right: 15%;">
-        <h1 class="whiteText">About</h1><br>
-        <div class="container whiteCont">
-          <p><strong>Background</strong></p>
-          <p>While many studies have been done to correlate different kinds of media exposure to different behavior and mental health issues (i.e. violent video games have been correlated with higher levels of aggression in children, social media use has been correlated with lower self-esteem in females), very doctors I know have asked about my online behavior, and few online behavioral and mental health diagnostic surveys acknowledge the correlations through their questions.
-          I believe that one of the main reasons it is hard to discuss internet behavior between patients and primary care clinicians is due to the large range of activities that can be done online that havent been studied, categorized, or correlated with mental health issues.
-          When we began studying issues with user data tracking in class, I started to think about how user data could potentially be used to benefit users rather than exploit them if it is used to contextualize certain diagnoses.
-          </p>
-          <p><strong>What It Is, And How It Works</strong></p>
+    <div class="container-fluid accentCont centeredCont">
 
-          <p>This project simulates a mental health diagnostic survey that takes user data and produces a profile with potential diagnoses. The code for this project simulates the extraction of user data through patient-input information (copying and pasting or typing), runs the text through an external text sentiment analysis API to retrieve the positive/negative connotation of the text, then extracts a random diagnosis from one of three sets of fake diagnoses.
-          </p>
-          <p><strong>Purpose</strong></p>
-          <p>While this project is partially intended to reveal the potential benefits of using user data for diagnoses, the random diagnosis is supposed to create confusion for any user that gets a slightly inaccurate diagnosis.
-          </p><br>
-          <p>Zoe Ren Sunday, December 4th, 2022</p>
+        <!-- <div class="flex-container parent justify-content-center">
+          <div class="child">Flex item 1</div>
+          <div class="child">Flex item 2</div>
+        </div> -->
+        <div id="container" class="left">
+          <div class="row">
+            <h1 class=" left">About</h1>
+          </div><br>
+          <div class="row">
+            <div class="col-md">
+              <p><small><strong>What It Is, And How It Works</strong></small></p>
+              <hr size="8" width="100%" color="black">
+              <p><small>This project simulates a mental health diagnostic survey that takes user data and produces a profile with potential diagnoses. The code for this project simulates the extraction of user data through patient-input information (copying and pasting or typing), runs the text through an external text sentiment analysis API to retrieve the positive/negative connotation of the text, then extracts a random diagnosis from one of three sets of fake diagnoses.
+              </small></p><br>
+
+              <p><small><strong>Purpose</strong></small></p>
+              <hr size="8" width="100%" color="black">
+              <p><small>While this project is partially intended to reveal the potential benefits of using user data for diagnoses, the random diagnosis is supposed to create confusion for any user that gets a slightly inaccurate diagnosis.
+              </small></p><br>
+            </div>
+            <div class="col-md">
+              <p><small><strong>Background</strong></small></p>
+              <hr size="8" width="100%" color="black">
+              <p><small>While many studies have been done to correlate different kinds of media exposure to different behavior and mental health issues (i.e. violent video games have been correlated with higher levels of aggression in children, social media use has been correlated with lower self-esteem in females), very doctors I know have asked about my online behavior, and few online behavioral and mental health diagnostic surveys acknowledge the correlations through their questions.
+              I believe that one of the main reasons it is hard to discuss internet behavior between patients and primary care clinicians is due to the large range of activities that can be done online that havent been studied, categorized, or correlated with mental health issues.
+              When we began studying issues with user data tracking in class, I started to think about how user data could potentially be used to benefit users rather than exploit them if it is used to contextualize certain diagnoses.
+              </small></p>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <!-- <div class="container left">
+
+          <div class="row">
+            <h1 class=" left">About</h1>
+          </div>
+
+          <div class="flex-container parent justify-content-center">
+            <div class="child">
+              <p><small><strong>What It Is, And How It Works</strong></small></p>
+              <hr size="8" width="100%" color="black">
+              <p><small>This project simulates a mental health diagnostic survey that takes user data and produces a profile with potential diagnoses. The code for this project simulates the extraction of user data through patient-input information (copying and pasting or typing), runs the text through an external text sentiment analysis API to retrieve the positive/negative connotation of the text, then extracts a random diagnosis from one of three sets of fake diagnoses.
+              </small></p>
+
+              <p><small><strong>Purpose</strong></small></p>
+              <hr size="8" width="100%" color="black">
+              <p><small>While this project is partially intended to reveal the potential benefits of using user data for diagnoses, the random diagnosis is supposed to create confusion for any user that gets a slightly inaccurate diagnosis.
+              </small></p><br>
+            </div>
+
+            <div class="child">
+              <p><small><strong>Background</strong></small></p>
+              <hr size="8" width="100%" color="black">
+              <p><small>While many studies have been done to correlate different kinds of media exposure to different behavior and mental health issues (i.e. violent video games have been correlated with higher levels of aggression in children, social media use has been correlated with lower self-esteem in females), very doctors I know have asked about my online behavior, and few online behavioral and mental health diagnostic surveys acknowledge the correlations through their questions.
+              I believe that one of the main reasons it is hard to discuss internet behavior between patients and primary care clinicians is due to the large range of activities that can be done online that havent been studied, categorized, or correlated with mental health issues.
+              When we began studying issues with user data tracking in class, I started to think about how user data could potentially be used to benefit users rather than exploit them if it is used to contextualize certain diagnoses.
+              </small></p>
+            </div>
+          </div> -->
+
     </div>
   </section>
   <!--Spacer-->
@@ -207,15 +272,21 @@
 
   <!--- FOOTER-------------------------------->
   <footer>
-        Critical Web Design/DIG 245 Final Project | Created by Zoe Ren | Hosted by Github Pages
-          &#x2022;
+    <div class="container-fluid centeredCont">
+      <div class="left" id="container">
+
+        <p><small>
+          Critical Web Design/DIG 245 Final Project | Created by Zoe Ren | Hosted by Github Pages &#x2022;
           <a href="https://www.linkedin.com/in/zoe-ren-41aa76208/">
           <img src="assets/img/linkedin.png" class="socials"></img>
-          </a>
-          &#x2022;
+          </a>&#x2022;
           <a href="https://portfolio.zoeren.dcreate.domains/">
           <img src="assets/img/tempprofile.png" class="socials">
           </a>
+        </small></p>
+
+      </div>
+    </div>
   </footer>
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
