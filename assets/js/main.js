@@ -1,17 +1,40 @@
 /* javascript */
+function typeEffect(element, speed) {
+	var text = element.innerHTML;
+	element.innerHTML = "";
+	var i = 0;
+
+	var timer = setInterval(function() {
+    if (i < text.length) {
+      element.append(text.charAt(i));
+      i++;
+    } else {
+      clearInterval(timer);
+    }
+  }, speed);
+}
+
+// application
+var speed = 105;
+var splash = document.getElementById('splash');
+var delay = splash.innerHTML.length * speed + speed;
+
+// type affect to header
+typeEffect(splash, 105);
+
 $(window).on('load', function(){
     $('html, body').scrollTop(0);
 });
 
-$('#treatment1').click(function(e) {
-  e.preventDefault();
-});
-$('#treatment2').click(function(e) {
-  e.preventDefault();
-});
-$('#treatment3').click(function(e) {
-  e.preventDefault();
-});
+// $('#treatment1').click(function(e) {
+//   e.preventDefault();
+// });
+// $('#treatment2').click(function(e) {
+//   e.preventDefault();
+// });
+// $('#treatment3').click(function(e) {
+//   e.preventDefault();
+// });
 
 /*--------------------Button Function---------------------------*/
 var current = 0;
@@ -57,12 +80,12 @@ function getInputValue() {
 
 function getNameAndDate() {
   //Date variables
-  var date = document.getElementById('date');
-  let currentDate = new Date();
-  let cDay = currentDate.getDate();
-  let cMonth = currentDate.getMonth() + 1;
-  let cYear = currentDate.getFullYear();
-  date.innerHTML = "<strong>Date: </strong>" + cDay + "/" + cMonth + "/" + cYear;
+  // var date = document.getElementById('date');
+  // let currentDate = new Date();
+  // let cDay = currentDate.getDate();
+  // let cMonth = currentDate.getMonth() + 1;
+  // let cYear = currentDate.getFullYear();
+  // date.innerHTML = "<strong>Date: </strong>" + cDay + "/" + cMonth + "/" + cYear;
 
   //inputVal variables
   let inputVal = document.getElementById("inputVal").value;
@@ -74,7 +97,7 @@ function getNameAndDate() {
   // let nameCap = arr[Math.floor(Math.random() * arr.length)];
   // let finalName = nameCap.replace(/"/g, '');
   let patient = Math.floor((Math.random() * 9) + 1);
-  name.innerHTML = "<strong>ID: </strong> A0" + patient + "F" + patient;
+  name.innerHTML = "<small> Patient ID:  A0" + patient + "F" + patient + "</small>";
 }
 
 function getDiagnosis(){
@@ -106,24 +129,32 @@ async function fetchSentiment(text) {
           const condition = happyemotions[randomhappy];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>happy</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
           document.getElementById("symptoms").innerHTML = "<ul><li>Excessive happiness</li><li>Tickled feathers</li><li>High Resiliancy</li></ul>";
-          document.getElementById("treatment1").innerHTML = "Build Up Negative Mindsets";
+          document.getElementById("treatment1").innerHTML = "Think Outside the Box";
+          document.getElementById("treatment1").href = "https://poorlydrawnlines.com/wp-content/uploads/2015/01/sing.png";
           document.getElementById("treatment2").innerHTML = "Share Your Happiness";
-          document.getElementById("treatment3").innerHTML = "Change Your Identity";
+          document.getElementById("treatment2").href = "https://lowres.cartooncollections.com/birds-baby_birds-chicks-pigeons-children-families-WJ500834_low.jpg";
+          document.getElementById("treatment3").innerHTML = "Adorn An New Persona";
+          document.getElementById("treatment3").href = "https://i.pinimg.com/originals/94/93/33/94933365aa4682a28d2823a0a42bd8c9.jpg";
         } else if (sentimentAnalysis=='N') {
           const condition = sademotions[randomsad];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>negative</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
           document.getElementById("symptoms").innerHTML = "<ul><li>Lack of emotions</li><li>Unending drowsiness</li><li>Low self-esteem</li></ul>";
           document.getElementById("treatment1").innerHTML = "A Self-Care Guide";
+          document.getElementById("treatment1").href = "https://i.etsystatic.com/18685415/r/il/e9684f/1781637953/il_794xN.1781637953_hgeq.jpg";
           document.getElementById("treatment2").innerHTML = "Positive Mindsets";
           document.getElementById("treatment2").href = "https://www.sunnyskyz.com/uploads/2017/03/f5yvc-wholesome-comics-15.png";
           document.getElementById("treatment3").innerHTML = "Renvision Yourself";
+          document.getElementById("treatment3").href = "https://www.pleated-jeans.com/wp-content/uploads/2016/02/jim_33-1.jpg";
         } else {
           const condition = neutralemotions[randomneutral];
           document.getElementById("info").innerHTML = "Based on your input, the algorithm has identified symptoms of <u>neutral</u> emotions. Dr. Duck believes you are at risk of <strong style='color: #FF8D4E !important;'>"  + condition + "</strong>";
           document.getElementById("symptoms").innerHTML = "<ul><li>Spiritless apathy</li><li>Passive indifference</li><li>Impartial detachment</li></ul>";
           document.getElementById("treatment1").innerHTML = "A Break from Neutrality";
-          document.getElementById("treatment2").innerHTML = "Noncholance At Work";
+          document.getElementById("treatment1").href = "http://cdn.ebaumsworld.com/mediaFiles/picture/540044/813313.png";
+          document.getElementById("treatment2").innerHTML = "Learn from Example";
+          document.getElementById("treatment2").href = "chickadee.html";
           document.getElementById("treatment3").innerHTML = "Try Something New";
+          document.getElementById("treatment3").href = "https://forklores.files.wordpress.com/2013/09/bird-yoga-cartoon.jpg";
         }
       }
     )
