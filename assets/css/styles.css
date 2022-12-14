@@ -1,4 +1,26 @@
 /* css */
+/*-------------------------NAVIGATION----------------------------------*/
+/*mainNav*/
+nav {
+  background-color: #4B4B4B !important;
+  opacity: 100% !important;
+  z-index: 0 !important;
+}
+#menu {
+  background-color: #FF8D4E !important; 
+}
+.navbar-brand {color: #fff;}
+.navbar-nav li.nav-item a.nav-link {color: #fff;}
+.navbar-nav li.nav-item a.nav-link:hover {
+  color: #FF8D4E !important;
+}
+.navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+  color: #FF8D4E !important;
+}
+.navbar-nav li.nav-item a.nav-link.active {
+  color: #FF8D4E !important;
+} 
+
 /*----------------------------SPLASH--------------------------------*/
 #home {padding: 5rem;}
 /* Logo */
@@ -9,222 +31,23 @@
 #down a:hover {color: #FF8D4E !important;}
 
 /*----------------------------MAIN--------------------------------*/
-#main {}
+#main { color: black;}
 
-#container {background-color: ;width: 80%; max-width: 900px;align-items: center; justify-content: center;}
+#container {width: 80%; max-width: 900px;align-items: center; justify-content: center;}
+textarea {
+  width: 100%;
+  color: black;
+  justify-content: center;
+  text-align: center;
+  padding-top: .2rem;
+}
 
 /*----------------------------ABOUT--------------------------------*/
 
 /*----------------------------MODAL--------------------------------*/
 .indent {text-indent: 4%;}
 .col {gap: 1rem !important;}
-.row {gap: 1rem !important;}
-#report {
-  color: black !important;
-  background-color: white;
-  padding: 2rem;
-  justify-content: center !important;
-}
-#myModal {z-index: 10 !important;}
-/*----------------------------FOOTER--------------------------------*/
-footer {
-  color: white !important;
-  background-color: #4B4B4B;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-/*elements------------------------------------------------------------*/
-body {
-  background-color: white !important;
-  font-family: 'IBM Plex Mono', monospace !important;
-  /*text-transform: uppercase !important;*/
-  color: black !important;
-  text-align: center !important;
-  justify-content: space-evenly !important;
-}
-hr {
-  z-index: 0 !important;
-}
-
-textarea {
-  width: 100%;
-  color: black;
-  justify-content: center;
-  text-align: center;
-  padding-top: .2rem;}
-
-a {
-  text-decoration: none !important;
-  color: white !important;
-  /* padding-top: .5rem !important;
-  padding-bottom: .5rem !important; */
-}
-
-a:active {color: white !important;}
-
-
-
-.modal-parent{
-  display: flex;
-  flex-direction: row;
-  gap: .5rem;
-}
-.modal-child {
-  flex: ;
-}
-@media (max-width: 400px) {
-  .modal-parent {
-    flex-direction: column;gap: 0rem !important;
-  }
-
-}
-
-#treatment1 #treatment2 #treatment3 {
-}
-/*classes-------------------------------------------------------------*/
-/* text adjustments */
-.blackText {
-  color: black;
-}
-.accentText {
-  color: #FF8D4E;
-}
-.whiteText {
-  color: white !important;
-}
-.left {
-  text-align: left;
-}
-.right {
-  text-align: right;
-}
-
-/* containers */
-.accentCont {
-  background-color:  #FF8D4E !important;
-}
-.whiteCont {
-  background-color: white !important;
-}
-
-.accentCont, .whiteCont {
-  justify-content: center !important;
-  padding: 1.2rem;
-}
-/* SVGs */
-
-.icon {
-  position: relative;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.items {
-  column-count: 3;
-  grid-column-gap: 1rem !important;
-}
-
-/*containers*/
-
-.box {
-  width: 100%;
-  height: 100%;
-  background-color: grey;
-}
-.boxw {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-}
-.centeredCont {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  justify-content: center !important;
-}
-.border {
-  border: .2rem solid red;
-}
-.socials {
-  width: 15px;
-  height: 15px;
-}
-.spacer {height: 3rem;}
-.accent {background-color: #FF8D4E !important;}
-.white {background-color: white !important;}
-
-.treatment {
-  background-color: lightgrey !important;
-  color: white !important;
-  border-radius: .25rem;
-  padding: .5rem;
-}
-
-.treatment:hover {
-  background-color: #FF8D4E !important;
-  color: white !important;}
-
-/*ids------------------------------------------------------------------*/
-#iconBox {
-  width:5rem;
-  height:5rem;
-}
-#instructions {
-  width: 50% !important;
-  justify-content: center !important;
-}
-#list {
-  padding-left: 20% !important;
-  text-align: left !important;
-}
-
-
-
-.reportButton {
-  border-radius: .01rem !important;
-  width: 50% !important;
-  height: 3rem !important;
-  color: white !important;
-  background-color: #FF8D4E !important;
-  border: none !important;
-  cursor:pointer !important;
-}
-
-/*button shit*/
-.button {
-  border-radius: .01rem !important;
-  width: 100% !important;
-  height: 3rem !important;
-  color: white !important;
-  background-color: #FF8D4E !important;
-  border: none !important;
-  cursor:pointer !important;
-  /*transition:800ms ease all !important;*/
-}
-
-.button:hover {
-  border-radius: .01rem !important;
-  width: 100% !important;
-  height: 3rem !important;
-  border: 0.25rem solid #FF8D4E !important;
-  color: #FF8D4E !important;
-  background-color: white !important;
-}
-
-:.button {
-  border-radius: .01rem !important;
-  width: 100% !important;
-  height: 3rem !important;
-  border: 0.25rem solid #FF8D4E !important;
-  color: #FF8D4E !important;
-  background-color: white !important;
-}
-
-/*ids------------------------------------------------------------------*/
-/* The Modal (background)*/
+.row {gap: 1rem !important;}/* Modal Content */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -238,8 +61,6 @@ a:active {color: white !important;}
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-/* Modal Content */
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -247,10 +68,109 @@ a:active {color: white !important;}
   border: 1px solid #888;
   width: 80%;
 }
+#report {
+  color: black !important;
+  background-color: white;
+  padding: 2rem;
+  justify-content: center !important;
+}
+#myModal {z-index: 10 !important;}
+
+
+/*----------------------------FOOTER--------------------------------*/
+footer {
+  color: white !important;
+  background-color: #4B4B4B !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/*elements------------------------------------------------------------*/
+body {
+  background-color: white !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  /*text-transform: uppercase !important;*/
+  color: black !important;
+  text-align: center !important;
+  justify-content: space-evenly !important;
+}
+hr {z-index: 0 !important;}
+a {text-decoration: none !important; color: white !important;}
+a:active {color: white !important;}
+
+/*classes-------------------------------------------------------------*/
+
+/* text adjustments */
+.accentText {color: #FF8D4E;}
+.whiteText {color: white !important;}
+.left {text-align: left;}
+
+/* containers */
+.accentCont {background-color:  #FF8D4E !important;}
+.whiteCont {background-color: white !important;}
+.accentCont, .whiteCont {justify-content: center !important;padding: 1.2rem;}
+.centeredCont {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spacer {height: 3rem;}
+.accent {background-color: #FF8D4E !important;}
+.white {background-color: white !important;}
+.treatment {
+  /* background-color: #4B4B4B !important; */
+  padding: .5rem;
+  border-radius: .01rem !important;
+  border: .08rem solid #FF8D4E !important;
+}
+.treatment:hover {
+  background-color: #FF8D4E !important;
+  color: white !important;
+}
+#treatment1, #treatment2, #treatment3 {
+  color: #FF8D4E !important;
+}
+#treatment1:hover, #treatment2:hover, #treatment3:hover {
+  color: white !important;
+}
+.socials {
+  width: 15px;
+  height: 15px;
+}
+
+/*button shit*/
+.button {
+  border-radius: .01rem !important;
+  width: 100% !important;
+  height: 3rem !important;
+  color: white !important;
+  background-color: #FF8D4E !important;
+  border: none !important;
+  cursor:pointer !important;
+  transition: 800ms ease all !important;
+}
+.button:hover {
+  border-radius: .01rem !important;
+  width: 100% !important;
+  height: 3rem !important;
+  border: 0.25rem solid #FF8D4E !important;
+  color: #FF8D4E !important;
+  background-color: white !important;
+}
+
+:button {
+  border-radius: .01rem !important;
+  width: 100% !important;
+  height: 3rem !important;
+  border: 0.25rem solid #FF8D4E !important;
+  color: #FF8D4E !important;
+  background-color: white !important;
+}
 
 /* The Close Button */
 .close {
-  background-color: #aaaaaa !important;
+  background-color: #4B4B4B !important;
   border-radius: .01rem !important;
   width: 100% !important;
   height: 3rem !important;
@@ -258,55 +178,10 @@ a:active {color: white !important;}
   border: none !important;
   cursor:pointer !important;
 }
-
-.close:hover,
 .close:focus {
   text-decoration: none;
   cursor: pointer;
 }
-
-/*-------------------------NAVIGATION----------------------------------*/
-/*mainNav*/
-nav {
-  background-color: #4B4B4B !important;
-  height:6rem !important;
-  z-index: 0 !important;
-}
-#navbarNav {
-  padding-bottom: .5rem !important;
-  margin-top:0rem !important;
-}
-
-
-.navbar-brand {color: #fff;}
-
-.navbar-nav {margin-top: 1rem;}
-
-.navbar-nav li.nav-item a.nav-link {
-  color: #fff;
-}
-
-.navbar-nav li.nav-item a.nav-link:hover {
-  color: #4B4B4B !important;
-  background-color: white !important;
-}
-
-.navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-  color: #fff !important;
-  background-color: white !important;
-}
-
-.navbar-nav li.nav-item a.nav-link.active {
-  color: #4B4B4B !important;
-  background-color: white !important;
-}
-
-
-
-/*-------------------------HEADER/SPLASH----------------------------------*/
-/*-------------------------MAIN CONTENT----------------------------------*/
-/*-------------------------FOOTER----------------------------------*/
-
 
 /*-------------------------RESPONSIVE LAYOUT----------------------------------*/
 

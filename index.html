@@ -15,14 +15,31 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <title>Diagnosis</title>
+  <link rel="icon" type="image/x-icon" href="/Users/zoeren/Sites/critical-web-design/dig245-final/assets/img/DrDuckCircIcon.svg">
 </head>
 
 <body>
 
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-sm text-uppercase fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <div type="button" class="navbar-brand"><a class="nav-link" href="#top">DIAGNOSIS</a>
+        <a class="navbar-brand" href="#top">DIAGNOSIS</a>
+        <button id="menu" class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#main">Run Diagnosis</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  <!-- <nav class="navbar navbar-expand-sm text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <div type="button" class="navbar-brand">
+        <a class="nav-link" href="#top">DIAGNOSIS</a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,7 +49,7 @@
           </li>
         </ul>
       </div>
-  </nav>
+  </nav> -->
 
   <!--Splash-->
   <div id="top" class="accent spacer"></div>
@@ -45,16 +62,17 @@
     <h5 style="font-weight: 300;" class="whiteText indent">
       Dr. Duck will need to collect a sample to complete your diagnosis.
     </h5>
-    <button class="button" id="down"><a href="#diagnosis-section">Let's Begin!</a></button>
+    <button class="button" id="down"><a href="#main">Let's Begin!</a></button>
   </div>
 
   <!--Spacer-->
 
-  <div id="diagnosis-section" class="white spacer"></div>
-  <div class="white spacer"></div>
+ 
 
   <!--Main Section-->
-  <section class="container-fluid whiteCont">
+  <section id="main" class="container-fluid whiteCont">
+    <div class="white spacer"></div>
+    <div class="white spacer"></div>
     <div class="centeredCont">
       <div id="container">
         <!--Header-->
@@ -96,26 +114,22 @@
   <div class="accent spacer"></div>
 
   <!-- The Modal -->
-  <div id="myModal" class="modal" style="">
+  <div id="myModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content" id="report">
       <div class="container" id="container">
         <div class="row">
           <h3>Report Summary</h3>
-
           <div class="col left">
             <span id="name"></span><br><br>
             <!-- <span id="date"></span> -->
-            <p class="left"><small>Disclaimer: Diagnosis&#8482; does not verify the accuracy of the responses in this report.
-                Only a verified clinician can provide a legal diagnosis.</small></p>
+            <p class="left">Disclaimer: Diagnosis&#8482; does not verify the accuracy of the responses in this report.
+                Only a verified clinician can provide a legal diagnosis.</p>
             <p class="left indent" id="info"></p>
           </div>
         </div>
 
-        <div class="row">
-
-        </div>
         <!--symptoms-->
         <div class="row">
           <p><u>Common Symptoms</u></p>
@@ -133,61 +147,24 @@
             <a id="treatment3" href=""></a>
           </div>
         </div>
-        <!-- <div class="row centeredCont">
-          <p><u>Common Symptoms</u></p>
-          <div class="container centeredCont">
-            <p id="symptoms" class="left"></p>
-          </div>
-        </div>
-
-        <div class="container">
-          <p><u>Suggested Resources:</u></p>
-          <div class="row g-4 justify-content-center">
-            <div class="col treatment centeredCont">
-              <a id="treatment1" href=""></a>
-            </div>
-            <div class="col treatment centeredCont">
-              <a id="treatment2" href=""></a>
-            </div>
-            <div class="col treatment centeredCont">
-              <a id="treatment3" href=""></a>
-            </div>
-          </div> -->
-
-        <!-- <div class="row">
-            <p>Suggested Action Plan Resources</p>
-            <div class="col">
-              <div class="treatment" >
-                <a id="treatment1" href=""></a></div>
-            </div>
-            <div class="col">
-              <div class="treatment">
-                <a id="treatment2" href=""></a></div>
-            </div>
-            <div class="col">
-              <div class="treatment">
-                <a id="treatment3" href=""></a></div>
-            </div>
-          </div> -->
-
+      </div>
         <!--end moderator score-->
+        
         <hr>
         <div class="row">
           <div class="col centeredCont" style="padding-top: 2rem !important;">
-            <button class="button" style="" onClick="window.location.reload();">New Diagnosis</button>
+            <button class="button" onClick="window.location.reload();">New Diagnosis</button>
           </div>
           <div class="col centeredCont" style="padding-top: 2rem !important;">
             <button class="button close" onclick="exit();">&times; Exit Report</button>
           </div>
         </div>
-
-      </div>
     </div>
   </div>
 
-  <div id="about" class="accent spacer"></div>
   <!--- ABOUT-------------------------------->
   <section>
+    <div id="about" class="accent spacer"></div>
     <div class="container-fluid accentCont centeredCont">
 
       <!-- <div class="flex-container parent justify-content-center">
@@ -224,36 +201,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="container left">
-
-          <div class="row">
-            <h1 class=" left">About</h1>
-          </div>
-
-          <div class="flex-container parent justify-content-center">
-            <div class="child">
-              <p><small><strong>What It Is, And How It Works</strong></small></p>
-              <hr size="8" width="100%" color="black">
-              <p><small>This project simulates a mental health diagnostic survey that takes user data and produces a profile with potential diagnoses. The code for this project simulates the extraction of user data through patient-input information (copying and pasting or typing), runs the text through an external text sentiment analysis API to retrieve the positive/negative connotation of the text, then extracts a random diagnosis from one of three sets of fake diagnoses.
-              </small></p>
-
-              <p><small><strong>Purpose</strong></small></p>
-              <hr size="8" width="100%" color="black">
-              <p><small>While this project is partially intended to reveal the potential benefits of using user data for diagnoses, the random diagnosis is supposed to create confusion for any user that gets a slightly inaccurate diagnosis.
-              </small></p><br>
-            </div>
-
-            <div class="child">
-              <p><small><strong>Background</strong></small></p>
-              <hr size="8" width="100%" color="black">
-              <p><small>While many studies have been done to correlate different kinds of media exposure to different behavior and mental health issues (i.e. violent video games have been correlated with higher levels of aggression in children, social media use has been correlated with lower self-esteem in females), very doctors I know have asked about my online behavior, and few online behavioral and mental health diagnostic surveys acknowledge the correlations through their questions.
-              I believe that one of the main reasons it is hard to discuss internet behavior between patients and primary care clinicians is due to the large range of activities that can be done online that havent been studied, categorized, or correlated with mental health issues.
-              When we began studying issues with user data tracking in class, I started to think about how user data could potentially be used to benefit users rather than exploit them if it is used to contextualize certain diagnoses.
-              </small></p>
-            </div>
-          </div> -->
-
     </div>
   </section>
   <!--Spacer-->
@@ -277,6 +224,7 @@
       </div>
     </div>
   </footer>
+
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Boostrap JS -->
