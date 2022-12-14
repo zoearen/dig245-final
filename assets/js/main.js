@@ -26,16 +26,6 @@ $(window).on('load', function(){
     $('html, body').scrollTop(0);
 });
 
-// $('#treatment1').click(function(e) {
-//   e.preventDefault();
-// });
-// $('#treatment2').click(function(e) {
-//   e.preventDefault();
-// });
-// $('#treatment3').click(function(e) {
-//   e.preventDefault();
-// });
-
 /*--------------------Button Function---------------------------*/
 var current = 0;
 for (var i = 0; i < document.links.length; i++) {
@@ -133,7 +123,7 @@ async function fetchSentiment(text) {
           document.getElementById("treatment1").href = "https://poorlydrawnlines.com/wp-content/uploads/2015/01/sing.png";
           document.getElementById("treatment2").innerHTML = "Share Your Happiness";
           document.getElementById("treatment2").href = "https://lowres.cartooncollections.com/birds-baby_birds-chicks-pigeons-children-families-WJ500834_low.jpg";
-          document.getElementById("treatment3").innerHTML = "Adorn An New Persona";
+          document.getElementById("treatment3").innerHTML = "Adorn a New Persona";
           document.getElementById("treatment3").href = "https://i.pinimg.com/originals/94/93/33/94933365aa4682a28d2823a0a42bd8c9.jpg";
         } else if (sentimentAnalysis=='N') {
           const condition = sademotions[randomsad];
