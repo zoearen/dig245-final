@@ -58,8 +58,6 @@ textarea {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modal-content {
   background-color: #fefefe;
@@ -93,6 +91,7 @@ body {
   color: black !important;
   text-align: center !important;
   justify-content: space-evenly !important;
+  font-size: 12px !important;
 }
 hr {z-index: 0 !important;}
 a {text-decoration: none !important; color: white !important;}
@@ -139,7 +138,7 @@ a:active {color: white !important;}
   height: 15px;
 }
 
-/*button shit*/
+/* Normal Button */
 .button {
   border-radius: .01rem !important;
   width: 100% !important;
@@ -184,7 +183,15 @@ a:active {color: white !important;}
 }
 
 /*-------------------------RESPONSIVE LAYOUT----------------------------------*/
-
+/* Default */
+h1 {font-size: 22px !important;}
+h3 {font-size: 12px !important; font-weight: 300 !important}
+h5 {font-size: 16px !important; }
+p {font-size: 12px !important;}
+@media (max-width: 576px) {
+  #reportSum { text-align: left !important;
+}
+}
 /* sm */
 @media (min-width: 576px) {
   .socials {
@@ -206,34 +213,33 @@ a:active {color: white !important;}
     max-width: 8rem;
     max-height: 8rem;
   }
+  body {font-size: 14px !important;} 
+  p {font-size: 14px !important;}
+  h3 {font-size: 14px !important;}
+
+  h1 {font-size: 28px !important;}
+  h5 {font-size: 18px !important; }
 
 }
 
 /* med */
 @media (min-width: 768px) {
-  .socials {
-    width: 20px !important;
-    height: 20px !important;
-  }
-  .row {
-    margin-bottom: .15rem !important;
-    margin-top: .15rem !important;
-  }
-  #home {
-    padding: 7rem 12rem 7rem 12rem !important;
-  }
-  #down {
-    width: 12rem !important;
-    height: 4rem !important;
-  }
-  .duckLogo {
-    max-width: 10rem;
-    max-height: 10rem;
-  }
+  .socials {width: 20px !important; height: 20px !important;}
+  .row {margin-bottom: .15rem !important; margin-top: .15rem !important; }
+  #home {padding: 7rem 12rem 7rem 12rem !important;}
+  #down {width: 12rem !important; height: 4rem !important;}
+  .duckLogo {max-width: 10rem; max-height: 10rem;}
+
+  body {font-size: 16px !important;} 
+  p {font-size: 16px !important;}
+  h3 {font-size: 16px !important;}
+
+  h1 {font-size: 32px !important;}
+  h5 {font-size: 24px !important; }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .socials {
     width: 30px !important;
     height: 30px !important;
@@ -253,7 +259,7 @@ a:active {color: white !important;}
     max-width: 12rem;
     max-height: 12rem;
   }
-}
+} */
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -276,4 +282,10 @@ a:active {color: white !important;}
     max-width: 12rem;
     max-height: 12rem;
   }
+  body {font-size: 18px !important;} 
+  p {font-size: 18px !important;}
+  h3 {font-size: 18px !important;}
+
+  h1 {font-size: 38px !important;}
+  h5 {font-size: 28px !important; }
 }
